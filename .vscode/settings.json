@@ -1,3 +1,6 @@
 {
-    "path-intellisense.absolutePathToWorkspace": false
+    "path-intellisense.absolutePathToWorkspace": false,
+    "cSpell.words": [
+        "Projetos"
+    ]
 }
