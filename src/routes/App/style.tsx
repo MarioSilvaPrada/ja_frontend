@@ -19,7 +19,7 @@ export const Layer = styled.div`
 
 export const Title = styled.h1`
   font-size: 0.8rem;
-  margin-bottom: 2rem;
+  margin-bottom: 10rem;
 `;
 
 export const OptionsWrapper = styled.div`
@@ -37,13 +37,28 @@ export const Option = styled.p`
 export const Content = styled.div`
   position: relative;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: space-between;
   text-transform: uppercase;
   color: white;
+  height: 100%;
 `;
 
 export const TopHeader = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+`;
+
+export const SocialWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+
+  a:not(:last-child) {
+    margin-right: 1.2rem;
+  }
+`;
+
+export const SocialLink = styled.a`
+  font-size: 1.8rem;
 `;

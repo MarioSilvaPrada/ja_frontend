@@ -1,7 +1,8 @@
-import React, {FC} from 'react';
+import React, { FC } from 'react';
 import * as S from './style';
 
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import social from 'utils/social';
 
 const App: FC = () => (
   <S.Container>
@@ -18,6 +19,13 @@ const App: FC = () => (
           </Link>
         </S.OptionsWrapper>
       </S.TopHeader>
+      <S.SocialWrapper>
+        {social.map(({ Icon, url }) => (
+          <S.SocialLink href={url} key={url} target="blank">
+            {Icon}
+          </S.SocialLink>
+        ))}
+      </S.SocialWrapper>
     </S.Content>
   </S.Container>
 );
