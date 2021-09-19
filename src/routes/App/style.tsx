@@ -1,8 +1,13 @@
 import styled from 'styled-components';
 
-export const Container = styled.div`
+interface IProps {
+  urlImage?: string;
+}
+
+export const Container = styled.div<IProps>`
   height: 100%;
-  background-image: url(https://images.pexels.com/photos/7174398/pexels-photo-7174398.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);
+  // background-image: url(https://images.pexels.com/photos/7174398/pexels-photo-7174398.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);
+  background-image: url(${({ urlImage }) => urlImage || ''});
   background-position: center;
   background-size: cover;
   padding: 2rem;

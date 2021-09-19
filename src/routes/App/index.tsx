@@ -1,4 +1,4 @@
-import React, { FC, useEffect } from 'react';
+import React, { FC, useEffect, useState } from 'react';
 import * as S from './style';
 
 import { Link } from 'react-router-dom';
@@ -6,11 +6,24 @@ import social from 'utils/social';
 import { getSettings } from 'api';
 
 const App: FC = () => {
+  interface ISettings {
+    main_background_image: string;
+  }
+
+  const [settings, setSettings] = useState<ISettings | null>(null);
+
+  const getSiteSettings = async () => {
+    const res = await getSettings();
+    if (res) {
+      setSettings(res);
+      console.log(res);
+    }
+  };
   useEffect(() => {
-    getSettings();
+    getSiteSettings();
   }, []);
   return (
-    <S.Container>
+    <S.Container urlImage={settings?.main_background_image || ''}>
       <S.Layer />
       <S.Content>
         <S.TopHeader>

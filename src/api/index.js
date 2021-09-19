@@ -11,7 +11,6 @@ const getSettings = async () => {
     const res = await api.get('/settings');
 
     if (res.status === 200) {
-      console.log({ res: res.data });
       return res.data[0];
     }
   } catch (e) {
