@@ -11,6 +11,7 @@ export const Container = styled.div<IProps>`
   background-position: center;
   background-size: cover;
   padding: 2rem;
+  background-color: white;
 `;
 
 export const Layer = styled.div`

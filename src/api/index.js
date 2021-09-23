@@ -23,7 +23,6 @@ const getProjects = async () => {
     const res = await api.get('/projects');
 
     if (res.status === 200) {
-      console.log({ res: res.data });
       return res.data;
     }
   } catch (e) {

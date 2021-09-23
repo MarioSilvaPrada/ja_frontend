@@ -3,33 +3,56 @@ import * as S from './style';
 
 import { Link } from 'react-router-dom';
 import social from 'utils/social';
-import { getSettings } from 'api';
+import { getSettings, getProjects } from 'api';
 
 const App: FC = () => {
   interface ISettings {
     main_background_image: string;
   }
 
-  const [settings, setSettings] = useState<ISettings | null>(null);
+  interface IProjects {
+    id: number;
+    main_image: string;
+    name: string;
+    section: Array<{
+      description: string;
+      id: number;
+      image: Array<string>;
+      project: number;
+      section_name: string;
+    }>;
+  }
 
-  const getSiteSettings = async () => {
-    const res = await getSettings();
-    if (res) {
-      setSettings(res);
-      console.log(res);
+  const [settings, setSettings] = useState<ISettings | null>(null);
+  const [projects, setProjects] = useState<IProjects | null>(null);
+
+  const getData = async () => {
+    const mySettings = await getSettings();
+    const myProjects = await getProjects();
+    if (mySettings) {
+      setSettings(mySettings);
+    }
+
+    if (myProjects) {
+      setProjects(myProjects);
     }
   };
   useEffect(() => {
-    getSiteSettings();
+    getData();
   }, []);
   return (
     <S.Container urlImage={settings?.main_background_image || ''}>
-      <S.Layer />
+      {settings?.main_background_image && <S.Layer />}
       <S.Content>
         <S.TopHeader>
           <S.Title>João Afonso</S.Title>
           <S.OptionsWrapper>
-            <Link to="projetos">
+            <Link
+              to={{
+                pathname: 'projetos',
+                state: { projects },
+              }}
+            >
               <S.Option>Projetos</S.Option>
             </Link>
             <Link to="sobre">
