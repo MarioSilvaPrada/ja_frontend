@@ -6,6 +6,9 @@ const theme = {
     medium: '17px',
     big: '40px',
   },
+  sizes: {
+    maxWidth: '78rem',
+  },
 };
 
 export default theme;
