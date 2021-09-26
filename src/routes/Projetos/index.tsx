@@ -1,7 +1,7 @@
 import React, { FC, useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import { getProjects } from 'api';
-import Layout from 'components/LazyImage';
+import Layout from 'components/Layout';
 import * as S from './style';
 
 interface IProjects {
@@ -25,8 +25,6 @@ const Projetos: FC = () => {
   const fetchProjects = async () => {
     const res = await getProjects();
     if (res) {
-      console.log({ res });
-
       setAllProjects(res);
     }
   };
@@ -41,7 +39,7 @@ const Projetos: FC = () => {
     }
   }, []);
   return (
-    <Layout>
+    <Layout title="Projetos">
       <S.Container>
         {allProjects.map((el) => (
           <S.ImageCard key={el.id} imgURL={el.main_image}>

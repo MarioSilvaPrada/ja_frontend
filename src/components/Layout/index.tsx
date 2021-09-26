@@ -4,7 +4,7 @@ import React, { FC } from 'react';
 import * as S from './style';
 
 interface IProps {
-  children: React.ReactNode;
+  children: React.ReactNode ;
   title: string;
 }
 
