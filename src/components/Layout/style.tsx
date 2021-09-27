@@ -1,8 +1,23 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
-export const Wrapper = styled.div`
+interface LayoutProps {
+  pathName: string;
+}
+
+const homeRouteStyle = css`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+`;
+
+export const Wrapper = styled.div<LayoutProps>`
   max-width: ${({ theme }) => theme.sizes.maxWidth};
   margin: 0 auto;
+  padding: 1rem;
+  height: 100%;
+  position: relative;
+
+  ${({ pathName }) => pathName === '/' && homeRouteStyle}
 `;
 
 export const Body = styled.div``;
