@@ -1,43 +1,23 @@
 import React, { FC } from 'react';
-import * as S from './style';
+import { ISettings } from 'utils/interfaces';
 
-interface IProjects {
-  id: number;
-  main_image: string;
-  name: string;
-  section: Array<{
-    description: string;
-    id: number;
-    image: Array<string>;
-    project: number;
-    section_name: string;
-  }>;
-}
+import * as S from './style';
 
 interface IProps {
   pathName: string;
-  globalState: { projects: IProjects };
+  globalState: { settings: ISettings };
 }
 
-const NavBar: FC<IProps> = ({ pathName, globalState }) => {
-  return (
-    <S.NavContainer pathName={pathName}>
-      <S.Home to="/">
-        <p>João Afonso</p>
-      </S.Home>
-      <div>
-        <S.Option
-          to={{
-            pathname: 'projetos',
-            state: { projects: globalState?.projects },
-          }}
-        >
-          Projetos
-        </S.Option>
-        <S.Option to="/sobre">Sobre</S.Option>
-      </div>
-    </S.NavContainer>
-  );
-};
+const NavBar: FC<IProps> = ({ pathName }) => (
+  <S.NavContainer pathName={pathName}>
+    <S.Home to="/">
+      <p>João Afonso</p>
+    </S.Home>
+    <div>
+      <S.Option to="/projetos">Projetos</S.Option>
+      <S.Option to="/sobre">Sobre</S.Option>
+    </div>
+  </S.NavContainer>
+);
 
 export default NavBar;

@@ -10,6 +10,7 @@ import App from './routes/App';
 import theme from './theme/theme';
 // Pages
 import Projetos from './routes/Projetos';
+import ProductPage from './routes/SingleProject';
 import Sobre from './routes/Sobre';
 import PageNotFound from './routes/PageNotFound';
 
@@ -23,6 +24,7 @@ const root = (
       <Switch>
         <Route exact path="/" component={App} />
         <Route exact path="/projetos" component={Projetos} />
+        <Route exact path="/projetos/:id" component={ProductPage} />
         <Route exact path="/sobre" component={Sobre} />
         <Route path="*" component={PageNotFound} />
       </Switch>

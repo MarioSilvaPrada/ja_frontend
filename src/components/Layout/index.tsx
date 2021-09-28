@@ -2,23 +2,12 @@ import React, { FC } from 'react';
 import NavBar from 'components/NavBar';
 import { useLocation } from 'react-router-dom';
 
+import { ISettings } from 'utils/interfaces';
 import * as S from './style';
 
-interface IProjects {
-  id: number;
-  main_image: string;
-  name: string;
-  section: Array<{
-    description: string;
-    id: number;
-    image: Array<string>;
-    project: number;
-    section_name: string;
-  }>;
-}
 interface IProps {
-  children: React.ReactNode;
-  state?: { projects: IProjects };
+  children: React.ReactElement<any, string | React.JSXElementConstructor<any>>;
+  state?: { settings: ISettings };
 }
 
 const Layout: FC<IProps> = ({ children, state }) => {

@@ -1,18 +1,22 @@
 import React, { FC } from 'react';
+import { IProjects } from 'utils/interfaces';
 import * as S from './style';
 
 interface IProps {
-  imgURL: string;
-  name: string;
-  id: number;
+  project: IProjects;
 }
 
-const ProjectCard: FC<IProps> = ({ imgURL, name, id }) => {
+const ProjectCard: FC<IProps> = ({ project }) => {
   return (
-    <S.PressWrapper to={`/projetos/${id}`}>
-      <S.ImageCard imgURL={imgURL}>
+    <S.PressWrapper
+      to={{
+        pathname: `/projetos/${project.id}`,
+        state: { project },
+      }}
+    >
+      <S.ImageCard imgURL={project.main_image}>
         <S.Layer>
-          <p>{name}</p>
+          <p>{project.name}</p>
         </S.Layer>
       </S.ImageCard>
     </S.PressWrapper>
