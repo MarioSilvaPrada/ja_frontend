@@ -5,19 +5,26 @@ import ProjectCard from 'components/ProjectCard';
 import { IProjects } from 'utils/interfaces';
 import * as S from './style';
 
-const Projetos: FC = () => {
+interface IProps {
+  projects: Array<IProjects>;
+}
+
+const Projetos: FC<IProps> = ({ projects }) => {
   const [allProjects, setAllProjects] = useState<Array<IProjects>>([]);
 
   const fetchProjects = async () => {
     const res = await getProjects();
-    console.log({ res });
     if (res) {
       setAllProjects(res);
     }
   };
 
   useEffect(() => {
-    fetchProjects();
+    if (projects) {
+      setAllProjects(projects);
+    } else {
+      fetchProjects();
+    }
   }, []);
 
   return (

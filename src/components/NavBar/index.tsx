@@ -1,11 +1,8 @@
 import React, { FC } from 'react';
-import { ISettings } from 'utils/interfaces';
-
 import * as S from './style';
 
 interface IProps {
   pathName: string;
-  globalState: { settings: ISettings };
 }
 
 const NavBar: FC<IProps> = ({ pathName }) => (

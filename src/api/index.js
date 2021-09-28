@@ -30,6 +30,18 @@ const getProjects = async () => {
   }
 };
 
+const getSingleProject = async (id) => {
+  try {
+    const res = await api.get(`/projects/${id}`);
+
+    if (res.status === 200) {
+      return res.data;
+    }
+  } catch (e) {
+    return e.response;
+  }
+};
+
 const getAbout = async () => {
   try {
     const res = await api.get('/about');
@@ -56,4 +68,4 @@ const getPartners = async () => {
   }
 };
 
-export { getSettings, getProjects, getAbout, getPartners };
+export { getSettings, getProjects, getAbout, getPartners, getSingleProject };
