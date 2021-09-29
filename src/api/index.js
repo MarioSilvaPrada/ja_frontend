@@ -60,7 +60,6 @@ const getPartners = async () => {
     const res = await api.get('/partners');
 
     if (res.status === 200) {
-      console.log({ res: res.data });
       return res.data;
     }
   } catch (e) {

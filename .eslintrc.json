@@ -29,6 +29,7 @@
         "tsx": "never"
       }
     ],
+    "react/jsx-wrap-multilines": "off",
     "react/prop-types": "off",
     "no-console": 1,
     "react/jsx-filename-extension": [
