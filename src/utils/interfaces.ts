@@ -6,8 +6,12 @@ interface ImageProps {
 }
 
 export interface ISettings {
+  id: number;
+  admin_address: string;
+  admin_email: string;
+  admin_name: string;
+  admin_phone_number: string;
   main_background_image: string;
-  name: string;
 }
 
 export interface IProjects {

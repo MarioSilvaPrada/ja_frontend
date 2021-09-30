@@ -15,7 +15,7 @@ const ImageWrapper = styled.div`
   animation: 1s ${opacityAnim} ease-out;
 `;
 
-const MyLazyImage = ({ alt, src, actual }) => {
+const MyLazyImage = ({ alt, src, actual, myWidth }) => {
   return (
     <LazyImage
       src={src}
@@ -25,7 +25,7 @@ const MyLazyImage = ({ alt, src, actual }) => {
           ref={ref}
           style={{
             minHeight: '30rem',
-            width: '100%',
+            width: myWidth || '100%',
             background: 'rgba(0,0,0,0.1)',
             margin: '.2rem',
           }}

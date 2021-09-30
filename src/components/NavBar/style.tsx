@@ -9,7 +9,7 @@ export const NavContainer = styled.div<NavProps>`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 0 1rem;
+  padding: 0 0 2rem;
   color: ${({ pathName }) => (pathName === '/' ? 'white' : 'black')};
 `;
 

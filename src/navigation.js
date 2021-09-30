@@ -39,7 +39,11 @@ const Navigation = () => {
           component={() => <Projetos projects={projects} />}
         />
         <Route exact path="/projetos/:id" component={ProductPage} />
-        <Route exact path="/sobre" component={Sobre} />
+        <Route
+          exact
+          path="/sobre"
+          component={() => <Sobre settings={settings} />}
+        />
         <Route path="*" component={PageNotFound} />
       </Switch>
     </Router>
