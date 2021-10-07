@@ -11,8 +11,22 @@ const NavBar: FC<IProps> = ({ pathName }) => (
       <p>João Afonso</p>
     </S.Home>
     <div>
-      <S.Option to="/projetos">Projetos</S.Option>
-      <S.Option to="/sobre">Sobre</S.Option>
+      <S.Option
+        to="/projetos"
+        activeStyle={{
+          fontWeight: 'bold',
+        }}
+      >
+        Projetos
+      </S.Option>
+      <S.Option
+        to="/sobre"
+        activeStyle={{
+          fontWeight: 'bold',
+        }}
+      >
+        Sobre
+      </S.Option>
     </div>
   </S.NavContainer>
 );

@@ -9,10 +9,12 @@ interface IProps {
 
 const Sobre: FC<IProps> = ({ settings }) => (
   <Layout>
-    <S.Paragraph>{settings.admin_name}</S.Paragraph>
-    <S.Paragraph>{settings.admin_email}</S.Paragraph>
-    <S.Paragraph>{settings.admin_phone_number}</S.Paragraph>
-    <S.Paragraph>{settings.admin_address}</S.Paragraph>
+    <>
+      <S.Paragraph>{settings.admin_name}</S.Paragraph>
+      <S.Paragraph>{settings.admin_email}</S.Paragraph>
+      <S.Paragraph>{settings.admin_phone_number}</S.Paragraph>
+      <S.Paragraph>{settings.admin_address}</S.Paragraph>
+    </>
   </Layout>
 );
 

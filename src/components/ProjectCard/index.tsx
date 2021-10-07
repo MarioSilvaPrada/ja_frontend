@@ -21,7 +21,7 @@ const ProjectCard: FC<IProps> = ({ project }) => {
         actual={
           <S.ImageCard imgURL={project.main_image}>
             <S.Layer>
-              <p>{project.name}</p>
+              <S.H3>{project.name}</S.H3>
             </S.Layer>
           </S.ImageCard>
         }

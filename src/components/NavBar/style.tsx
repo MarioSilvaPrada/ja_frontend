@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Link } from 'react-router-dom';
+import { NavLink, Link } from 'react-router-dom';
 
 type NavProps = {
   pathName: string;
@@ -15,6 +15,6 @@ export const NavContainer = styled.div<NavProps>`
 
 export const Home = styled(Link)``;
 
-export const Option = styled(Link)`
+export const Option = styled(NavLink)`
   margin-left: 1.2rem;
 `;

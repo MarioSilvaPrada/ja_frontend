@@ -37,3 +37,5 @@ export const Layer = styled.div`
 `;
 
 export const PressWrapper = styled(Link)``;
+
+export const H3 = styled.h3``;

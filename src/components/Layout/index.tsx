@@ -4,7 +4,7 @@ import { useLocation } from 'react-router-dom';
 import * as S from './style';
 
 interface IProps {
-  children: React.ReactElement<any, string | React.JSXElementConstructor<any>>;
+  children: JSX.Element;
 }
 
 const Layout: FC<IProps> = ({ children }) => {
