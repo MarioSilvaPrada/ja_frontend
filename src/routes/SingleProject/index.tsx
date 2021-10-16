@@ -40,7 +40,12 @@ const Projetos: FC<LocationProps> = ({ location }) => {
         <S.Title>{singleProject?.name}</S.Title>
         {singleProject?.section.map((section) => (
           <div key={section.id}>
-            <S.Description>{section.description}</S.Description>
+            {section.description
+              .split(/\r?\n/g)
+              .map(
+                (paragraph) =>
+                  !!paragraph && <S.Description>{paragraph}</S.Description>
+              )}
             {section.image.map(({ image }) => (
               <LazyImage
                 myWidth="50rem"
