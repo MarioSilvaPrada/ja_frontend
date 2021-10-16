@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { FC } from 'react';
 import { LazyImage } from 'react-lazy-images';
 import styled, { keyframes } from 'styled-components';
 
@@ -15,7 +15,14 @@ const ImageWrapper = styled.div`
   animation: 1s ${opacityAnim} ease-out;
 `;
 
-const MyLazyImage = ({ alt, src, actual, myWidth }) => {
+interface IProps {
+  alt?: string;
+  src: string;
+  myWidth?: number | string;
+  actual: JSX.Element;
+}
+
+const MyLazyImage: FC<IProps> = ({ alt, src, actual, myWidth }) => {
   return (
     <LazyImage
       src={src}
