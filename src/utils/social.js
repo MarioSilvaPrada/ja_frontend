@@ -3,11 +3,11 @@ import { AiOutlineInstagram, AiOutlineLinkedin } from 'react-icons/ai';
 
 const social = [
   {
-    Icon: <AiOutlineInstagram />,
+    Icon: (color = 'white') => <AiOutlineInstagram color={color} />,
     url: 'https://www.instagram.com/',
   },
   {
-    Icon: <AiOutlineLinkedin />,
+    Icon: (color = 'white') => <AiOutlineLinkedin color={color} />,
     url: 'https://www.linkedin.com/',
   },
 ];
