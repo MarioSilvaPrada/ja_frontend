@@ -8,12 +8,8 @@ export const Wrapper = styled.div`
   justify-content: space-between;
 `;
 
-export const Title = styled.h1`
-  font-size: ${(props) => props.theme.fontSize.big};
-`;
-
 export const Paragraph = styled.p`
-  margin-bottom: 1.2rem;
+  margin-bottom: 0.7rem;
   font-size: 0.8rem;
 `;
 
@@ -25,4 +21,33 @@ export const SocialLink = styled.a`
 
 export const Copy = styled.p`
   font-size: 0.8rem;
+`;
+
+export const Section = styled.div``;
+
+export const PartnersWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  margin-bottom: 2rem;
+`;
+
+export const PartnerLink = styled.a`
+  margin-right: 1rem;
+  font-size: 0.8rem;
+`;
+
+export const Title = styled.h4`
+  margin-bottom: 0.6rem;
+`;
+
+export const AboutWrapper = styled.div`
+  max-width: 40rem;
+  margin-bottom: 2rem;
+  margin-top: 1rem;
+`;
+
+export const AboutParagraph = styled.p`
+  font-size: 0.8rem;
+  margin-bottom: 0.5rem;
+  line-height: 1.5rem;
 `;

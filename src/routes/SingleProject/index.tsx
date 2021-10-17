@@ -4,6 +4,8 @@ import { useParams } from 'react-router-dom';
 import { getSingleProject } from 'api';
 import { IProjects } from 'utils/interfaces';
 import LazyImage from 'components/LazyImage';
+import getTextParagraphs from 'utils/textParagraph';
+
 import * as S from './style';
 
 interface LocationProps {
@@ -19,14 +21,13 @@ const Projetos: FC<LocationProps> = ({ location }) => {
   const { state } = location;
   const { id }: { id: string } = useParams();
 
-  const getProject = async (projectId: string) => {
-    const res = await getSingleProject(projectId);
-    if (res) {
-      setSingProject(res);
-    }
-  };
-
   useEffect(() => {
+    const getProject = async (projectId: string) => {
+      const res = await getSingleProject(projectId);
+      if (res) {
+        setSingProject(res);
+      }
+    };
     if (state?.project) {
       setSingProject(state.project);
     } else {
@@ -40,15 +41,10 @@ const Projetos: FC<LocationProps> = ({ location }) => {
         <S.Title>{singleProject?.name}</S.Title>
         {singleProject?.section.map((section) => (
           <div key={section.id}>
-            {section.description
-              .split(/\r?\n/g)
-              .map(
-                (paragraph) =>
-                  !!paragraph && <S.Description>{paragraph}</S.Description>
-              )}
+            {getTextParagraphs(section.description, S.Description)}
             {section.image.map(({ image }) => (
               <LazyImage
-                myWidth="50rem"
+                myWidth="45rem"
                 key={`${section.id}${image}`}
                 alt="project image"
                 src={image}
@@ -57,6 +53,7 @@ const Projetos: FC<LocationProps> = ({ location }) => {
             ))}
           </div>
         ))}
+        <S.StyledLink to="/projetos">Voltar para Projetos</S.StyledLink>
       </S.Container>
     </Layout>
   );

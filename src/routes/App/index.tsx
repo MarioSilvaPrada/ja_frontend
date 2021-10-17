@@ -17,7 +17,7 @@ const App: FC<IProps> = ({ settings }) => (
       <S.SocialWrapper>
         {social.map(({ Icon, url }) => (
           <S.SocialLink href={url} key={url} target="blank">
-            {Icon}
+            {Icon()}
           </S.SocialLink>
         ))}
       </S.SocialWrapper>
