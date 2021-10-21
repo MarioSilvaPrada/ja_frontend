@@ -8,7 +8,7 @@ import axios from 'axios';
 
 const getSettings = async () => {
   try {
-    const res = await axios.get(process.env.BASE_URL + '/settings');
+    const res = await axios.get('/api/settings');
 
     if (res.status === 200) {
       return res.data[0];
@@ -19,10 +19,9 @@ const getSettings = async () => {
 };
 
 const getProjects = async () => {
-  console.log('ola');
   console.log(process.env.BASE_URL + '/projects');
   try {
-    const res = await axios.get(process.env.BASE_URL + '/projects');
+    const res = await axios.get('/api/projects');
 
     if (res.status === 200) {
       return res.data;
@@ -34,7 +33,7 @@ const getProjects = async () => {
 
 const getSingleProject = async (id) => {
   try {
-    const res = await axios.get(`${process.env.BASE_URL}/projects/${id}`);
+    const res = await axios.get(`/api/projects/${id}`);
 
     if (res.status === 200) {
       return res.data;
@@ -46,7 +45,7 @@ const getSingleProject = async (id) => {
 
 const getAbout = async () => {
   try {
-    const res = await axios.get(process.env.BASE_URL + '/about');
+    const res = await axios.get('/api/about');
 
     if (res.status === 200) {
       console.log({ res: res.data });
@@ -59,7 +58,7 @@ const getAbout = async () => {
 
 const getPartners = async () => {
   try {
-    const res = await axios.get(process.env.BASE_URL + '/partners');
+    const res = await axios.get('/api/partners');
 
     if (res.status === 200) {
       return res.data;
