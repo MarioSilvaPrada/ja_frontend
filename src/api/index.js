@@ -2,8 +2,10 @@ import axios from 'axios';
 
 export const PRODUCTION = true;
 
+console.log({ url: process.env.BASE_URL });
+
 const api = axios.create({
-  baseURL: 'http://127.0.0.1:8000',
+  baseURL: PRODUCTION ? process.env.BASE_URL : process.env.BASE_STAGING_URL,
 });
 
 const getSettings = async () => {
