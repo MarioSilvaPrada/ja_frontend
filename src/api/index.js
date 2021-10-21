@@ -1,9 +1,9 @@
 import axios from 'axios';
 
 export const PRODUCTION = true;
-
+// process.env.BASE_URL
 const api = axios.create({
-  baseURL: PRODUCTION ? process.env.BASE_URL : process.env.BASE_STAGING_URL,
+  baseURL: PRODUCTION ? '/api/' : process.env.BASE_STAGING_URL,
 });
 
 const getSettings = async () => {
