@@ -19,6 +19,8 @@ const getSettings = async () => {
 };
 
 const getProjects = async () => {
+  console.log('ola');
+  console.log(process.env.BASE_URL + '/projects');
   try {
     const res = await axios.get(process.env.BASE_URL + '/projects');
 
