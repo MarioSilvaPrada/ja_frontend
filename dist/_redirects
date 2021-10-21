@@ -1,5 +1,5 @@
 /* /index.html 200
 
-/settings http://159.223.29.178/settings 200!
+/settings/* http://159.223.29.178/settings 200!
 
-/projects http://159.223.29.178/projects 200!
+/projects/* http://159.223.29.178/projects 200!
