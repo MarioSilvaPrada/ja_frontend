@@ -8,7 +8,7 @@ const api = axios.create({
 
 const getSettings = async () => {
   try {
-    const res = await api.get('/settings');
+    const res = await api.get('/api/settings');
 
     if (res.status === 200) {
       return res.data[0];
@@ -20,7 +20,7 @@ const getSettings = async () => {
 
 const getProjects = async () => {
   try {
-    const res = await api.get('/projects');
+    const res = await api.get('/api/projects');
 
     if (res.status === 200) {
       return res.data;
@@ -32,7 +32,7 @@ const getProjects = async () => {
 
 const getSingleProject = async (id) => {
   try {
-    const res = await api.get(`/projects/${id}`);
+    const res = await api.get(`/api/projects/${id}`);
 
     if (res.status === 200) {
       return res.data;
@@ -44,7 +44,7 @@ const getSingleProject = async (id) => {
 
 const getAbout = async () => {
   try {
-    const res = await api.get('/about');
+    const res = await api.get('/api/about');
 
     if (res.status === 200) {
       console.log({ res: res.data });
@@ -57,7 +57,7 @@ const getAbout = async () => {
 
 const getPartners = async () => {
   try {
-    const res = await api.get('/partners');
+    const res = await api.get('/api/partners');
 
     if (res.status === 200) {
       return res.data;
