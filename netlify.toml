@@ -1,20 +1,20 @@
 [[redirects]]
   from = "/"
   to = "/index.html"
-  status = 301
+  status = 200
 
 [[redirects]]
   from = "/projetos"
   to = "/index.html"
-  status = 301
+  status = 200
 
 [[redirects]]
   from = "/sobre"
   to = "/index.html"
-  status = 301
+  status = 200
 
 [[redirects]]
   from = "/api/*"
   to = "http://159.223.29.178/api/:splat"
-  status = 200
+  status = 200!
   force = true
