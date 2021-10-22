@@ -68,21 +68,3 @@ const getPartners = async () => {
 };
 
 export { getSettings, getProjects, getAbout, getPartners, getSingleProject };
-
-
-// [[redirects]]
-//   from = "/api/*"
-//   to = "http://159.223.29.178/api/:splat"
-//   status = 200
-//   force = true
-
-// [[redirects]]
-//   from = "/*"
-//   to = "/index.html"
-//   status = 200
-//   force = true 
-
-
-//   redirects = [
-//   {from = "/api/*", to = "http://159.223.29.178/api/:splat", status = 200, force = true},
-//   {from = "/*", to = "/index.html", status = 200, force = true}]
