@@ -5,16 +5,6 @@
   force = true
 
 [[redirects]]
-  from = "/projetos"
-  to = "/index.html"
-  status = 200
-
-[[redirects]]
-  from = "/sobre"
-  to = "/index.html"
-  status = 200
-
-[[redirects]]
-  from = "/"
+  from = "/*"
   to = "/index.html"
   status = 200

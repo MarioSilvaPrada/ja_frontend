@@ -56,7 +56,7 @@ const Sobre: FC<IProps> = ({ settings }) => {
           <S.AboutWrapper>
             {aboutText && getTextParagraphs(aboutText, S.AboutParagraph)}
           </S.AboutWrapper>
-          {partners && (
+          {partners.length > 0 && (
             <>
               <S.Title>Parceiros:</S.Title>
               <S.PartnersWrapper>
