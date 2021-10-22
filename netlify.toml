@@ -1,17 +1,17 @@
 [[redirects]]
   from = "/"
   to = "/index.html"
-  status = 200
+  status = 301
 
 [[redirects]]
   from = "/projetos"
   to = "/index.html"
-  status = 200
+  status = 301
 
 [[redirects]]
   from = "/sobre"
   to = "/index.html"
-  status = 200
+  status = 301
 
 [[redirects]]
   from = "/api/*"
