@@ -3,5 +3,5 @@ redirects = [
   {from = "/", to = "/index.html", status = 200 },
   {from = "/projetos", to = "/index.html", status = 200 },
   {from = "/projetos/*", to = "/index.html", status = 200 },
-  {from = "/sobre", to = "/index.html", status = 200 },
+  {from = "/sobre", to = "/index.html", status = 200 }
   ]
