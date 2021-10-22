@@ -2,7 +2,8 @@ import React, { FC, useEffect, useState } from 'react';
 import Layout from 'components/Layout';
 import { ISettings } from 'utils/interfaces';
 import social from 'utils/social';
-import { getPartners, getAbout } from 'api';
+import { getPartners, getAbout, getSettings } from 'api';
+
 import getTextParagraphs from 'utils/textParagraph';
 
 import * as S from './style';
@@ -14,6 +15,13 @@ interface IProps {
 const Sobre: FC<IProps> = ({ settings }) => {
   const [partners, setPartners] = useState([]);
   const [aboutText, setAboutText] = useState('');
+  const [userSettings, setUserSettings] = useState<ISettings | null>(null);
+
+  const getUserSettings = async () => {
+    const res = await getSettings();
+    console.log({ settings: res });
+    setUserSettings(res);
+  };
 
   useEffect(() => {
     const getAllPartners = async () => {
@@ -30,9 +38,17 @@ const Sobre: FC<IProps> = ({ settings }) => {
       }
     };
 
+    if (settings) {
+      setUserSettings(settings);
+    } else {
+      getUserSettings();
+    }
+
     getAboutText();
     getAllPartners();
   }, []);
+  console.log({ partners });
+
   return (
     <Layout>
       <S.Wrapper>
@@ -40,22 +56,29 @@ const Sobre: FC<IProps> = ({ settings }) => {
           <S.AboutWrapper>
             {aboutText && getTextParagraphs(aboutText, S.AboutParagraph)}
           </S.AboutWrapper>
-          <S.Title>Parceiros:</S.Title>
-          <S.PartnersWrapper>
-            {partners.map((partner) => (
-              <S.PartnerLink
-                href={partner.url}
-                key={partner.name}
-                target="blank"
-              >
-                <p>{partner.name}</p>
-              </S.PartnerLink>
-            ))}
-          </S.PartnersWrapper>
-          <S.Paragraph>{settings.admin_name}</S.Paragraph>
-          <S.Paragraph>{settings.admin_email}</S.Paragraph>
-          <S.Paragraph>(+351) {settings.admin_phone_number}</S.Paragraph>
-          <S.Paragraph>{settings.admin_address}</S.Paragraph>
+          {partners && (
+            <>
+              <S.Title>Parceiros:</S.Title>
+              <S.PartnersWrapper>
+                {partners.map((partner) => (
+                  <S.PartnerLink
+                    href={partner.url}
+                    key={partner.name}
+                    target="blank"
+                  >
+                    <p>{partner.name}</p>
+                  </S.PartnerLink>
+                ))}
+              </S.PartnersWrapper>
+            </>
+          )}
+          <S.Paragraph>{userSettings?.admin_name}</S.Paragraph>
+          <S.Paragraph>{userSettings?.admin_email}</S.Paragraph>
+          <S.Paragraph>
+            (+351)
+            {userSettings?.admin_phone_number}
+          </S.Paragraph>
+          <S.Paragraph>{userSettings?.admin_address}</S.Paragraph>
           {social.map(({ Icon, url }) => (
             <S.SocialLink href={url} key={url} target="blank">
               {Icon('black')}
@@ -63,8 +86,8 @@ const Sobre: FC<IProps> = ({ settings }) => {
           ))}
         </S.Section>
         <S.Copy>
-          © {new Date().getFullYear()} {settings.admin_name}, all rights
-          reserved
+          © {new Date().getFullYear()}
+          {userSettings?.admin_name}, all rights reserved
         </S.Copy>
       </S.Wrapper>
     </Layout>
