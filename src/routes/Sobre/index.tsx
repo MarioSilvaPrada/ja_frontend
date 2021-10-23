@@ -42,9 +42,11 @@ const Sobre: FC<IProps> = ({ settings }) => {
     <Layout>
       <S.Wrapper>
         <S.Section>
-          <S.AboutWrapper>
-            {getTextParagraphs(userSettings?.description, S.AboutParagraph)}
-          </S.AboutWrapper>
+          {userSettings?.description && (
+            <S.AboutWrapper>
+              {getTextParagraphs(userSettings.description, S.AboutParagraph)}
+            </S.AboutWrapper>
+          )}
           {partners.length > 0 && (
             <>
               <S.Title>Parceiros:</S.Title>

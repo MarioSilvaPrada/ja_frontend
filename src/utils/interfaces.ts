@@ -20,6 +20,11 @@ export interface IProjects {
   main_image: string;
   name: string;
   tags: Array<number>;
+  architects: string;
+  engineering: string;
+  photgraphs: string;
+  area: string;
+  tipology: string;
   section: Array<{
     id: number;
     project: number;

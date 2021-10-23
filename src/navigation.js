@@ -23,15 +23,12 @@ const Navigation = () => {
     const myProjects = await getProjects();
 
     if (myProjects) {
-      console.log({ projects: myProjects });
-
       setProjects(myProjects);
     }
 
     const tags = await getTags();
 
     if (tags) {
-      console.log({ tags });
       setAllTags(tags);
     }
   };

@@ -7,9 +7,7 @@ interface IProps {
 
 const NavBar: FC<IProps> = ({ pathName }) => (
   <S.NavContainer pathName={pathName}>
-    <S.Home to="/">
-      <p>João Afonso</p>
-    </S.Home>
+    <S.Home to="/">João Afonso</S.Home>
     <div>
       <S.Option
         to="/projetos"
