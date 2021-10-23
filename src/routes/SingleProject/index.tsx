@@ -14,11 +14,12 @@ interface LocationProps {
       project: IProjects;
     };
   };
+  getNameTags: (id: number) => string;
 }
 
-const Projetos: FC<LocationProps> = ({ location }) => {
+const Projetos: FC<LocationProps> = ({ location, getNameTags }) => {
   const [singleProject, setSingProject] = useState<IProjects | null>(null);
-  const { state } = location;
+  console.log({ location });
   const { id }: { id: string } = useParams();
 
   useEffect(() => {
@@ -28,8 +29,8 @@ const Projetos: FC<LocationProps> = ({ location }) => {
         setSingProject(res);
       }
     };
-    if (state?.project) {
-      setSingProject(state.project);
+    if (location?.state?.project) {
+      setSingProject(location?.state.project);
     } else {
       getProject(id);
     }
@@ -50,6 +51,9 @@ const Projetos: FC<LocationProps> = ({ location }) => {
                 src={image}
                 actual={<S.Image src={image} />}
               />
+            ))}
+            {singleProject.tags.map((tagId) => (
+              <p key={tagId}>{getNameTags(tagId)}</p>
             ))}
           </div>
         ))}

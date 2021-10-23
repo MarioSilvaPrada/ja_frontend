@@ -21,7 +21,6 @@ const getSettings = async () => {
 const getProjects = async () => {
   try {
     const res = await api.get('/projects/');
-    console.log({ projects: res });
 
     if (res.status === 200) {
       return res.data;
@@ -43,18 +42,6 @@ const getSingleProject = async (id) => {
   }
 };
 
-const getAbout = async () => {
-  try {
-    const res = await api.get('/about/');
-
-    if (res.status === 200) {
-      return res.data;
-    }
-  } catch (e) {
-    return e.response;
-  }
-};
-
 const getPartners = async () => {
   try {
     const res = await api.get('/partners/');
@@ -67,4 +54,16 @@ const getPartners = async () => {
   }
 };
 
-export { getSettings, getProjects, getAbout, getPartners, getSingleProject };
+const getTags = async () => {
+  try {
+    const res = await api.get('/tag/');
+
+    if (res.status === 200) {
+      return res.data;
+    }
+  } catch (e) {
+    return e.response;
+  }
+};
+
+export { getSettings, getProjects, getPartners, getSingleProject, getTags };

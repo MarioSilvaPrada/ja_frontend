@@ -2,7 +2,7 @@ import React, { FC, useEffect, useState } from 'react';
 import Layout from 'components/Layout';
 import { ISettings } from 'utils/interfaces';
 import social from 'utils/social';
-import { getPartners, getAbout, getSettings } from 'api';
+import { getPartners, getSettings } from 'api';
 
 import getTextParagraphs from 'utils/textParagraph';
 
@@ -14,12 +14,10 @@ interface IProps {
 
 const Sobre: FC<IProps> = ({ settings }) => {
   const [partners, setPartners] = useState([]);
-  const [aboutText, setAboutText] = useState('');
   const [userSettings, setUserSettings] = useState<ISettings | null>(null);
 
   const getUserSettings = async () => {
     const res = await getSettings();
-    console.log({ settings: res });
     setUserSettings(res);
   };
 
@@ -31,30 +29,21 @@ const Sobre: FC<IProps> = ({ settings }) => {
       }
     };
 
-    const getAboutText = async () => {
-      const res = await getAbout();
-      if (res) {
-        setAboutText(res[0].description);
-      }
-    };
-
     if (settings) {
       setUserSettings(settings);
     } else {
       getUserSettings();
     }
 
-    getAboutText();
     getAllPartners();
   }, []);
-  console.log({ partners });
 
   return (
     <Layout>
       <S.Wrapper>
         <S.Section>
           <S.AboutWrapper>
-            {aboutText && getTextParagraphs(aboutText, S.AboutParagraph)}
+            {getTextParagraphs(userSettings?.description, S.AboutParagraph)}
           </S.AboutWrapper>
           {partners.length > 0 && (
             <>

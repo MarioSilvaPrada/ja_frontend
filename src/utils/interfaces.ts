@@ -12,12 +12,14 @@ export interface ISettings {
   admin_name: string;
   admin_phone_number: string;
   main_background_image: string;
+  description: string;
 }
 
 export interface IProjects {
   id: number;
   main_image: string;
   name: string;
+  tags: Array<number>;
   section: Array<{
     id: number;
     project: number;
