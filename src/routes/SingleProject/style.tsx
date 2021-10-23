@@ -60,7 +60,6 @@ export const TagsWrapper = styled.div`
 
 export const RowInfo = styled.div`
   display: flex;
-  align-items: center;
   margin-bottom: 1rem;
 `;
 
