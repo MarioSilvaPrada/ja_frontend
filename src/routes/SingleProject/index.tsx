@@ -39,15 +39,15 @@ const Projetos: FC<IProps> = ({ getNameTags }) => {
 
   const projectInfo = [
     {
-      name: 'Arquitectos',
+      name: 'Arquitetura',
       value: singleProject?.architects,
     },
     {
-      name: 'Engenheiros',
+      name: 'Engenharia',
       value: singleProject?.engineering,
     },
     {
-      name: 'Fotografos',
+      name: 'Fotografia',
       value: singleProject?.photgraphs,
     },
     {
