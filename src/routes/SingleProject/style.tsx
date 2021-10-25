@@ -6,7 +6,6 @@ export const Title = styled.h3`
 
   @media (max-width: 650px) {
     margin-bottom: 1rem;
-
   }
 `;
 
@@ -51,6 +50,12 @@ export const Wrapper = styled.div`
 export const Column = styled.div`
   &:first-child {
     margin-right: 0.8rem;
+  }
+
+  @media (max-width: 650px) {
+    &:first-child {
+      margin-right: 0;
+    }
   }
 `;
 
