@@ -3,6 +3,11 @@ import { Link } from 'react-router-dom';
 
 export const Title = styled.h3`
   margin-bottom: 0.5rem;
+
+  @media (max-width: 650px) {
+    margin-bottom: 1rem;
+
+  }
 `;
 
 export const Description = styled.p`
@@ -36,6 +41,11 @@ export const StyledLink = styled(Link)`
 export const Wrapper = styled.div`
   display: grid;
   grid-template-columns: 2fr 1fr;
+
+  @media (max-width: 650px) {
+    display: flex;
+    flex-direction: column-reverse;
+  }
 `;
 
 export const Column = styled.div`
