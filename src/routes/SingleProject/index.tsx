@@ -91,13 +91,15 @@ const Projetos: FC<IProps> = ({ getNameTags }) => {
                   </S.RowInfo>
                 ))}
 
-                <S.TagsWrapper>
-                  {singleProject?.tags.map((tagId) => (
-                    <S.TagContainer key={tagId}>
-                      <p>{getNameTags(tagId)}</p>
-                    </S.TagContainer>
-                  ))}
-                </S.TagsWrapper>
+                {singleProject?.tags && (
+                  <S.TagsWrapper>
+                    {singleProject?.tags.map((tagId) => (
+                      <S.TagContainer key={tagId}>
+                        <p>{getNameTags(tagId)}</p>
+                      </S.TagContainer>
+                    ))}
+                  </S.TagsWrapper>
+                )}
               </S.Fixed>
             </S.Column>
           </S.Wrapper>
