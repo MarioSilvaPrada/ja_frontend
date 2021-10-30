@@ -20,6 +20,8 @@ export const Wrapper = styled.div<LayoutProps>`
   ${({ pathName }) => pathName === '/' && homeRouteStyle}
 `;
 
-export const Body = styled.div``;
+export const Body = styled.div`
+  height: 100%;
+`;
 
 export const Title = styled.h2``;

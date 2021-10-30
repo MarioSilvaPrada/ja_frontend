@@ -66,3 +66,19 @@ export const SocialLink = styled.a`
   font-size: 1.5rem;
   color: white;
 `;
+
+export const SlideWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+`;
+
+export const AppWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+`;
