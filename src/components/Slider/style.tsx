@@ -1,4 +1,32 @@
-import styled, { css } from 'styled-components';
+import styled, { css, keyframes } from 'styled-components';
+
+const fadeInDown = keyframes`
+  0% {
+    opacity: 0;
+    transform: translate3d(0, -100%, 0);
+    visibility: hidden
+  }
+  15% {
+    opacity: 0;
+    visibility: hidden
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+    visibility: visible
+  }
+`;
+
+const fadeOutDown = keyframes`
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+    transform: translate3d(0, 100%, 0);
+  }
+`;
 
 interface IImage {
   urlImage?: string;
@@ -17,17 +45,17 @@ interface IAnimatedText {
 }
 
 const SLIDER_HEIGHT = '45rem';
-const CARD_WIDTH = '78rem';
+const SLIDER_MARGIN = '3rem';
 
 export const Container = styled.div`
   height: ${SLIDER_HEIGHT};
-  width: 100%;
+  width: ${({ theme }) => `calc(${theme.sizes.sliderWidth} + 3rem)`};
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
   overflow-x: hidden;
-  margin-bottom: 2rem;
+  z-index: 1;
 `;
 
 export const Image = styled.div<IImage>`
@@ -41,20 +69,22 @@ export const Image = styled.div<IImage>`
 
 export const AnimatedTitle = styled.h2<IAnimatedText>`
   position: absolute;
-  z-index: 1;
   top: 3rem;
-  left: 3rem;
-  margin: 0;
-  transform: translateY(-50%) translateX(-20%);
+  left: -2.5rem;
   color: white;
-  background: rgba(0, 0, 0, 0.6);
   padding: 0.5rem 1rem;
   border-radius: 0.3rem;
+  background: black;
+  ${({ isSelected }) =>
+    css`
+      animation: ${isSelected ? fadeInDown : fadeOutDown} 0.8s linear forwards;
+    `};
 `;
 
 export const Card = styled.div`
   position: relative;
-  width: ${CARD_WIDTH};
+  margin-left: ${SLIDER_MARGIN};
+  width: ${({ theme }) => theme.sizes.sliderWidth};
 `;
 
 export const CarouselWrapper = styled.div<ICarousel>`
@@ -62,9 +92,11 @@ export const CarouselWrapper = styled.div<ICarousel>`
   height: 100%;
   position: absolute;
   left: 0;
-  transition: 0.5s;
+  transition: 1s;
+  margin-left: 3rem;
   transform: translateX(
-    ${({ itemIndex }) => css`calc(-${itemIndex} * ${CARD_WIDTH})`}
+    ${({ itemIndex, theme }) =>
+      css`calc(-${itemIndex} * (${theme.sizes.sliderWidth} + ${SLIDER_MARGIN}) - ${SLIDER_MARGIN})`}
   );
 `;
 

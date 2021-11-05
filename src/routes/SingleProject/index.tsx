@@ -84,13 +84,6 @@ const Projetos: FC<IProps> = ({ getNameTags }) => {
             </S.Column>
             <S.Column>
               <S.Fixed>
-                {projectInfo.map(({ name, value }) => (
-                  <S.RowInfo key={name}>
-                    <S.RowTitle>{name}: </S.RowTitle>
-                    <p>{value}</p>
-                  </S.RowInfo>
-                ))}
-
                 {singleProject?.tags && (
                   <S.TagsWrapper>
                     {singleProject?.tags.map((tagId) => (
@@ -100,6 +93,12 @@ const Projetos: FC<IProps> = ({ getNameTags }) => {
                     ))}
                   </S.TagsWrapper>
                 )}
+                {projectInfo.map(({ name, value }) => (
+                  <S.RowInfo key={name}>
+                    <S.RowTitle>{name}: </S.RowTitle>
+                    <p>{value}</p>
+                  </S.RowInfo>
+                ))}
               </S.Fixed>
             </S.Column>
           </S.Wrapper>

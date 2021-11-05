@@ -1,12 +1,8 @@
 import React, { FC } from 'react';
 import * as S from './style';
 
-interface IProps {
-  pathName: string;
-}
-
-const NavBar: FC<IProps> = ({ pathName }) => (
-  <S.NavContainer pathName={pathName}>
+const NavBar: FC = () => (
+  <S.NavContainer>
     <S.Home to="/">João Afonso</S.Home>
     <div>
       <S.Option

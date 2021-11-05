@@ -1,15 +1,11 @@
 import styled from 'styled-components';
 import { NavLink, Link } from 'react-router-dom';
 
-type NavProps = {
-  pathName: string;
-};
-
-export const NavContainer = styled.div<NavProps>`
+export const NavContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  color: ${({ pathName }) => (pathName === '/' ? 'white' : 'black')};
+  color: black;
 `;
 
 export const Home = styled(Link)`

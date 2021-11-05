@@ -13,7 +13,7 @@ const homeRouteStyle = css`
 export const Wrapper = styled.div<LayoutProps>`
   max-width: ${({ theme }) => theme.sizes.maxWidth};
   margin: 0 auto;
-  padding: 1.5rem 1rem;
+  padding: 1rem 0.5rem;
   height: 100%;
   position: relative;
 
