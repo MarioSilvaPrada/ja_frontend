@@ -7,6 +7,7 @@ import Projetos from './routes/Projetos';
 import ProductPage from './routes/SingleProject';
 import Sobre from './routes/Sobre';
 import PageNotFound from './routes/PageNotFound';
+import Footer from 'components/Footer';
 
 const Navigation = () => {
   const [settings, setSettings] = useState([]);
@@ -49,7 +50,15 @@ const Navigation = () => {
   return (
     <Router>
       <Switch>
-        <Route exact path="/" component={() => <App settings={settings} />} />
+        <Route
+          exact
+          path="/"
+          component={() => (
+            <App
+              sliderProjects={projects.filter((project) => project.highlighted)}
+            />
+          )}
+        />
         <Route
           exact
           path="/projetos"
@@ -67,6 +76,7 @@ const Navigation = () => {
         />
         <Route path="*" component={PageNotFound} />
       </Switch>
+      <Footer settings={settings} />
     </Router>
   );
 };

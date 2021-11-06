@@ -1,10 +1,14 @@
 import React, { FC } from 'react';
+
+import logo from '../../assets/logo.svg';
 import * as S from './style';
 
 const NavBar: FC = () => (
   <S.NavContainer>
-    <S.Home to="/">João Afonso</S.Home>
-    <div>
+    <S.Home to="/">
+      <S.StyledImage src={logo} alt="logo" />
+    </S.Home>
+    <S.OptionsWrapper>
       <S.Option
         to="/projetos"
         activeStyle={{
@@ -21,7 +25,7 @@ const NavBar: FC = () => (
       >
         Sobre
       </S.Option>
-    </div>
+    </S.OptionsWrapper>
   </S.NavContainer>
 );
 

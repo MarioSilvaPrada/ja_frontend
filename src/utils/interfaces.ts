@@ -11,8 +11,8 @@ export interface ISettings {
   admin_email: string;
   admin_name: string;
   admin_phone_number: string;
-  main_background_image: string;
   description: string;
+  about_me_image: string;
 }
 
 export interface IProjects {
@@ -22,9 +22,15 @@ export interface IProjects {
   tags: Array<number>;
   architects: string;
   engineering: string;
-  photgraphs: string;
+  photographs: string;
   area: string;
   tipology: string;
+  construction: string;
+  state: string;
+  program: string;
+  client: string;
+  location: string;
+  year: string;
   section: Array<{
     id: number;
     project: number;

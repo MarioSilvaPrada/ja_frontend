@@ -1,19 +1,15 @@
 import styled, { css, keyframes } from 'styled-components';
+import { Link } from 'react-router-dom';
 
 const fadeInDown = keyframes`
-  0% {
+  from {
     opacity: 0;
     transform: translate3d(0, -100%, 0);
-    visibility: hidden
   }
-  15% {
-    opacity: 0;
-    visibility: hidden
-  }
-  100% {
+ 
+  to {
     opacity: 1;
     transform: translate3d(0, 0, 0);
-    visibility: visible
   }
 `;
 
@@ -42,9 +38,10 @@ interface ICarousel {
 
 interface IAnimatedText {
   isSelected: boolean;
+  delay?: number;
 }
 
-const SLIDER_HEIGHT = '45rem';
+const SLIDER_HEIGHT = '40rem';
 const SLIDER_MARGIN = '3rem';
 
 export const Container = styled.div`
@@ -56,6 +53,7 @@ export const Container = styled.div`
   position: relative;
   overflow-x: hidden;
   z-index: 1;
+  margin-right: ${SLIDER_MARGIN};
 `;
 
 export const Image = styled.div<IImage>`
@@ -67,19 +65,28 @@ export const Image = styled.div<IImage>`
   background-image: url(${({ urlImage }) => urlImage || ''});
 `;
 
-export const AnimatedTitle = styled.h2<IAnimatedText>`
+export const TextWrapper = styled.div`
   position: absolute;
-  top: 3rem;
-  left: -2.5rem;
-  color: white;
-  padding: 0.5rem 1rem;
-  border-radius: 0.3rem;
-  background: black;
-  ${({ isSelected }) =>
+  bottom: 5rem;
+  left: -3rem;
+  font-size: 3rem;
+  color: black;
+  background: rgba(255, 255, 255, 0.6);
+  padding: 0.5rem;
+  display: flex;
+`;
+
+export const AnimatedSpan = styled.span<IAnimatedText>`
+  opacity: ${({ isSelected }) => (isSelected ? 0 : 1)};
+  font-size: 2.5rem;
+  ${({ isSelected, delay }) =>
     css`
-      animation: ${isSelected ? fadeInDown : fadeOutDown} 0.8s linear forwards;
+      animation: ${isSelected ? fadeInDown : fadeOutDown} 0.3s linear forwards;
+      animation-delay: ${delay}s;
     `};
 `;
+
+export const StyledLink = styled(Link)``;
 
 export const Card = styled.div`
   position: relative;

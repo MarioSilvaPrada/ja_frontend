@@ -1,7 +1,6 @@
 import React, { FC, useEffect, useState } from 'react';
 import Layout from 'components/Layout';
 import { ISettings } from 'utils/interfaces';
-import social from 'utils/social';
 import { getPartners, getSettings } from 'api';
 
 import getTextParagraphs from 'utils/textParagraph';
@@ -42,6 +41,7 @@ const Sobre: FC<IProps> = ({ settings }) => {
     <Layout>
       <S.Wrapper>
         <S.Section>
+          <S.AboutImg src={userSettings?.about_me_image} />
           {userSettings?.description && (
             <S.AboutWrapper>
               {getTextParagraphs(userSettings.description, S.AboutParagraph)}
@@ -49,7 +49,7 @@ const Sobre: FC<IProps> = ({ settings }) => {
           )}
           {partners.length > 0 && (
             <>
-              <S.Title>Parceiros:</S.Title>
+              <S.Title>Partners:</S.Title>
               <S.PartnersWrapper>
                 {partners.map((partner) => (
                   <S.PartnerLink
@@ -63,23 +63,7 @@ const Sobre: FC<IProps> = ({ settings }) => {
               </S.PartnersWrapper>
             </>
           )}
-          <S.Paragraph>{userSettings?.admin_name}</S.Paragraph>
-          <S.Paragraph>{userSettings?.admin_email}</S.Paragraph>
-          <S.Paragraph>
-            (+351)
-            {userSettings?.admin_phone_number}
-          </S.Paragraph>
-          <S.Paragraph>{userSettings?.admin_address}</S.Paragraph>
-          {social.map(({ Icon, url }) => (
-            <S.SocialLink href={url} key={url} target="blank">
-              {Icon('black')}
-            </S.SocialLink>
-          ))}
         </S.Section>
-        <S.Copy>
-          © {new Date().getFullYear()}
-          {userSettings?.admin_name}, all rights reserved
-        </S.Copy>
       </S.Wrapper>
     </Layout>
   );

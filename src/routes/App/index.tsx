@@ -1,20 +1,19 @@
 import React, { FC } from 'react';
 import Layout from 'components/Layout';
 import Slider from 'components/Slider';
-
-import { ISettings } from 'utils/interfaces';
+import { IProjects } from 'utils/interfaces';
 
 import * as S from './style';
 
 interface IProps {
-  settings: ISettings;
+  sliderProjects: Array<IProjects>;
 }
 
-const App: FC<IProps> = ({ settings }) => (
+const App: FC<IProps> = ({ sliderProjects }) => (
   <Layout>
     <S.AppWrapper>
       <S.SlideWrapper>
-        <Slider />
+        <Slider sliderProjects={sliderProjects} />
       </S.SlideWrapper>
     </S.AppWrapper>
   </Layout>

@@ -14,14 +14,11 @@ export const Wrapper = styled.div<LayoutProps>`
   max-width: ${({ theme }) => theme.sizes.maxWidth};
   margin: 0 auto;
   padding: 1rem 0.5rem;
-  height: 100%;
   position: relative;
 
   ${({ pathName }) => pathName === '/' && homeRouteStyle}
 `;
 
-export const Body = styled.div`
-  height: 100%;
-`;
+export const Body = styled.div``;
 
 export const Title = styled.h2``;

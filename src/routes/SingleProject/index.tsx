@@ -48,15 +48,39 @@ const Projetos: FC<IProps> = ({ getNameTags }) => {
     },
     {
       name: 'Fotografia',
-      value: singleProject?.photgraphs,
+      value: singleProject?.photographs,
     },
     {
       name: 'Area',
       value: `${singleProject?.area} m²`,
     },
     {
-      name: 'Tipologia',
+      name: 'Typology',
       value: singleProject?.tipology,
+    },
+    {
+      name: 'Year',
+      value: singleProject?.year,
+    },
+    {
+      name: 'Construction',
+      value: singleProject?.construction,
+    },
+    {
+      name: 'State',
+      value: singleProject?.state,
+    },
+    {
+      name: 'Program',
+      value: singleProject?.program,
+    },
+    {
+      name: 'Location',
+      value: singleProject?.location,
+    },
+    {
+      name: 'Client',
+      value: singleProject?.client,
     },
   ];
 
