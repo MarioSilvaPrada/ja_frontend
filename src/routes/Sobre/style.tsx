@@ -2,7 +2,6 @@ import styled from 'styled-components';
 
 export const Wrapper = styled.div`
   margin-top: 1rem;
-  height: 60vh;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -45,4 +44,8 @@ export const AboutParagraph = styled.p`
 
 export const AboutImg = styled.img`
   width: 40rem;
+
+  @media (max-width: 40.5rem) {
+    width: 100%;
+  }
 `;

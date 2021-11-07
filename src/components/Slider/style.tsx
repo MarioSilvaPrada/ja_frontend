@@ -54,6 +54,12 @@ export const Container = styled.div`
   overflow-x: hidden;
   z-index: 1;
   margin-right: ${SLIDER_MARGIN};
+
+  @media (max-width: 500px) {
+    width: 100%;
+    height: 32rem;
+    margin-right: 0;
+  }
 `;
 
 export const Image = styled.div<IImage>`
@@ -74,6 +80,11 @@ export const TextWrapper = styled.div`
   background: rgba(255, 255, 255, 0.6);
   padding: 0.5rem;
   display: flex;
+
+  @media (max-width: 500px) {
+    left: 1rem;
+    bottom: 1rem;
+  }
 `;
 
 export const AnimatedSpan = styled.span<IAnimatedText>`
@@ -92,6 +103,10 @@ export const Card = styled.div`
   position: relative;
   margin-left: ${SLIDER_MARGIN};
   width: ${({ theme }) => theme.sizes.sliderWidth};
+
+  @media (max-width: 500px) {
+    margin-left: 0;
+  }
 `;
 
 export const CarouselWrapper = styled.div<ICarousel>`
@@ -99,12 +114,20 @@ export const CarouselWrapper = styled.div<ICarousel>`
   height: 100%;
   position: absolute;
   left: 0;
-  transition: 1s;
-  margin-left: 3rem;
+  transition: 1.2s;
+  margin-left: ${SLIDER_MARGIN};
   transform: translateX(
     ${({ itemIndex, theme }) =>
       css`calc(-${itemIndex} * (${theme.sizes.sliderWidth} + ${SLIDER_MARGIN}) - ${SLIDER_MARGIN})`}
   );
+
+  @media (max-width: 500px) {
+    margin-left: 0;
+    transform: translateX(
+      ${({ itemIndex, theme }) =>
+        css`calc(-${itemIndex} * ${theme.sizes.sliderWidth})`}
+    );
+  }
 `;
 
 export const Button = styled.button<ButtonProps>`
