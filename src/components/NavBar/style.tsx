@@ -26,6 +26,7 @@ export const OptionsWrapper = styled.div`
 
 export const Option = styled(NavLink)`
   font-size: 1.2rem;
+  font-weight: bold;
 `;
 
 export const StyledImage = styled.img`

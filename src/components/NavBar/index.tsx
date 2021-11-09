@@ -12,7 +12,7 @@ const NavBar: FC = () => (
       <S.Option
         to="/works"
         activeStyle={{
-          fontWeight: 'bold',
+          fontWeight: 'normal',
         }}
       >
         Works
@@ -21,7 +21,7 @@ const NavBar: FC = () => (
       <S.Option
         to="/studio"
         activeStyle={{
-          fontWeight: 'bold',
+          fontWeight: 'normal',
         }}
       >
         Studio
