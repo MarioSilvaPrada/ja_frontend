@@ -80,7 +80,7 @@ const Slider: FC<IProps> = ({ sliderProjects }) => {
         <S.Button onClick={() => goToItem('right')} />
         <S.CarouselWrapper itemIndex={item}>
           {sliderProjects.map(({ main_image, name, id }, i) => (
-            <S.StyledLink to={`projetos/${id}`} key={id}>
+            <S.StyledLink to={`works/${id}`} key={id}>
               <S.Card>
                 <S.Layer />
                 <S.TextWrapper>{animateText(name, item === i)}</S.TextWrapper>

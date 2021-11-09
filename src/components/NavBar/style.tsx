@@ -7,7 +7,7 @@ export const NavContainer = styled.div`
   align-items: center;
   justify-content: space-between;
   color: black;
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
 `;
 
 export const Home = styled(Link)`
