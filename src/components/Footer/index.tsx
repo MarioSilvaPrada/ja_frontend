@@ -13,12 +13,15 @@ const Footer: FC<IFooter> = ({ settings }) => {
     <S.FooterContainer>
       <S.Wrapper>
         <S.ParagraphWrapper>
-          <S.Paragraph>{settings?.admin_name}</S.Paragraph>
-          <S.Paragraph>{settings?.admin_email}</S.Paragraph>
-          <S.Paragraph>
-            (+351)
-            {settings?.admin_phone_number}
-          </S.Paragraph>
+          <S.Title>Contactos</S.Title>
+          <S.ContactWrapper>
+            <S.Paragraph>{settings?.admin_email}</S.Paragraph>
+            <span>•</span>
+            <S.Paragraph>
+              (+351)
+              {settings?.admin_phone_number}
+            </S.Paragraph>
+          </S.ContactWrapper>
           <S.Paragraph>{settings?.admin_address}</S.Paragraph>
         </S.ParagraphWrapper>
         <S.SocialWrapper>

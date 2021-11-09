@@ -15,15 +15,16 @@ const NavBar: FC = () => (
           fontWeight: 'bold',
         }}
       >
-        Projetos
+        Projects
       </S.Option>
+      <span>•</span>
       <S.Option
         to="/sobre"
         activeStyle={{
           fontWeight: 'bold',
         }}
       >
-        Sobre
+        About
       </S.Option>
     </S.OptionsWrapper>
   </S.NavContainer>

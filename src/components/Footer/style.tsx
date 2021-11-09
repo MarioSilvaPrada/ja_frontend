@@ -3,7 +3,8 @@ import styled from 'styled-components';
 export const SocialWrapper = styled.div`
   display: flex;
   align-items: flex-end;
-  margin-bottom: 1.2rem;
+  justify-content: center;
+  margin-bottom: 3rem;
   a:not(:last-child) {
     margin-right: 1rem;
   }
@@ -29,9 +30,24 @@ export const FooterContainer = styled.div`
 export const Copy = styled.p`
   font-size: 0.8rem;
 `;
-export const ParagraphWrapper = styled.div``;
+export const ParagraphWrapper = styled.div`
+  text-align: center;
+`;
 
 export const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
+`;
+
+export const ContactWrapper = styled.div`
+  display: flex;
+  algin-items: center;
+  justify-content: space-between;
+  margin 0 1rem;
+`;
+
+export const Title = styled.p`
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
 `;

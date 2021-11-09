@@ -7,7 +7,7 @@ const theme = {
     big: '40px',
   },
   sizes: {
-    maxWidth: '78rem',
+    maxWidth: '55rem',
     sliderWidth: '35rem',
   },
 };

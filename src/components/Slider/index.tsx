@@ -1,5 +1,4 @@
 import React, { FC, useState, useEffect } from 'react';
-import { BiLeftArrow, BiRightArrow } from 'react-icons/bi';
 import { IProjects } from 'utils/interfaces';
 import * as S from './style';
 
@@ -10,13 +9,17 @@ interface IProps {
 const Slider: FC<IProps> = ({ sliderProjects }) => {
   const [item, setItem] = useState(0);
   const [direction, setDirection] = useState('right');
+  const [isAutomatic, setIsAutomatic] = useState(true);
 
-  const goToItem = (direction?: string) => {
-    if (direction === 'left') {
+  const goToItem = (dire: string) => {
+    if (dire === 'left' && item > 0) {
       setItem(item - 1);
-      return;
     }
-    setItem(item + 1);
+
+    if (dire === 'right' && item < sliderProjects.length - 1) {
+      setItem(item + 1);
+    }
+    setIsAutomatic(false);
   };
 
   const animateText = (text: string, isSelected: boolean) => {
@@ -29,7 +32,7 @@ const Slider: FC<IProps> = ({ sliderProjects }) => {
         <S.AnimatedSpan
           key={`${split[i]}${i}`}
           isSelected={isSelected}
-          delay={0.5 + i / 10}
+          delay={0.03 * i}
         >
           {split[i]}
         </S.AnimatedSpan>
@@ -39,7 +42,7 @@ const Slider: FC<IProps> = ({ sliderProjects }) => {
     return arrayString;
   };
 
-  useEffect(() => {
+  const automaticMovement = () => {
     if (item + 1 === sliderProjects.length) {
       setDirection('left');
       setTimeout(() => setItem(item - 1), 4000);
@@ -50,35 +53,36 @@ const Slider: FC<IProps> = ({ sliderProjects }) => {
       setTimeout(() => setItem(item + 1), 4000);
       return;
     }
-
     if (direction === 'right') {
       setTimeout(() => setItem(item + 1), 4000);
     }
-
     if (direction === 'left') {
       setTimeout(() => setItem(item - 1), 4000);
     }
-  }, [item]);
+  };
+
+  useEffect(() => {
+    if (isAutomatic) {
+      automaticMovement();
+    } else {
+      const timer = () => setTimeout(() => setIsAutomatic(true), 3000);
+      const timerId = timer();
+      return () => {
+        clearTimeout(timerId);
+      };
+    }
+  }, [item, isAutomatic]);
 
   return (
     <>
-      <S.ButtonsWrapper>
-        {/* {item > 0 && (
-          <S.Button left onClick={() => goToItem('left')}>
-            <BiLeftArrow color="white" size="1.5rem" />
-          </S.Button>
-        )}
-        {item + 1 < sliderProjects.length && (
-          <S.Button onClick={() => goToItem()}>
-            <BiRightArrow color="white" size="1.5rem" />
-          </S.Button>
-        )} */}
-      </S.ButtonsWrapper>
       <S.Container>
+        <S.Button left onClick={() => goToItem('left')} />
+        <S.Button onClick={() => goToItem('right')} />
         <S.CarouselWrapper itemIndex={item}>
           {sliderProjects.map(({ main_image, name, id }, i) => (
             <S.StyledLink to={`projetos/${id}`} key={id}>
               <S.Card>
+                <S.Layer />
                 <S.TextWrapper>{animateText(name, item === i)}</S.TextWrapper>
                 <S.Image urlImage={main_image} />
               </S.Card>

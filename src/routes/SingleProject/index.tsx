@@ -106,7 +106,7 @@ const Projetos: FC<IProps> = ({ getNameTags }) => {
                 </div>
               ))}
             </S.Column>
-            <S.Column>
+            <S.SideInfo>
               <S.Fixed>
                 {singleProject?.tags && (
                   <S.TagsWrapper>
@@ -124,7 +124,7 @@ const Projetos: FC<IProps> = ({ getNameTags }) => {
                   </S.RowInfo>
                 ))}
               </S.Fixed>
-            </S.Column>
+            </S.SideInfo>
           </S.Wrapper>
           <S.StyledLink to="/projetos">Voltar para Projetos</S.StyledLink>
         </S.Container>

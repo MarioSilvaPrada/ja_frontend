@@ -15,8 +15,12 @@ export const Home = styled(Link)`
 `;
 
 export const OptionsWrapper = styled.div`
+  text-transform: uppercase;
   a:not(:last-child) {
-    margin-right: 1.5rem;
+    margin-right: 1rem;
+  }
+  span {
+    margin-right: 1rem;
   }
 `;
 

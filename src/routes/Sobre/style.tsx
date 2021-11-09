@@ -13,7 +13,11 @@ export const SocialLink = styled.a`
   margin-right: 0.6rem;
 `;
 
-export const Section = styled.div``;
+export const Section = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
 
 export const PartnersWrapper = styled.div`
   display: flex;

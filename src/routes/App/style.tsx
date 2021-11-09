@@ -1,26 +1,5 @@
 import styled from 'styled-components';
 
-// interface IProps {
-//   urlImage?: string;
-// }
-
-// export const Container = styled.div<IProps>`
-//   height: 100%;
-//   background-image: url(${({ urlImage }) => urlImage || ''});
-//   background-position: center;
-//   background-size: cover;
-//   background-color: white;
-// `;
-
-// export const Layer = styled.div`
-//   position: absolute;
-//   top: 0;
-//   bottom: 0;
-//   left: 0;
-//   right: 0;
-//   background: rgba(0, 0, 0, 0.5);
-// `;
-
 export const Title = styled.h1`
   font-size: 0.8rem;
   margin-bottom: 10rem;

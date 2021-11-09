@@ -19,7 +19,7 @@ export const Description = styled.p`
 export const Image = styled.img`
   width: 100%;
   display: inline-block;
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
 
   @media (max-width: 45.5rem) {
     width: 100%;
@@ -38,9 +38,8 @@ export const StyledLink = styled(Link)`
 `;
 
 export const Wrapper = styled.div`
-  display: grid;
-  grid-template-columns: 2fr 1fr;
-
+  display: flex;
+  position: relative;
   @media (max-width: 650px) {
     display: flex;
     flex-direction: column-reverse;
@@ -71,18 +70,33 @@ export const TagsWrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
   align-items: center;
+  margin-bottom: 0.5rem;
 `;
 
 export const RowInfo = styled.div`
   display: flex;
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
 `;
 
 export const RowTitle = styled.h5`
   margin-right: 0.2rem;
 `;
 
+export const SideInfo = styled.div`
+  position: absolute;
+  right: -20rem;
+  height: 100%;
+  padding-right: 0.5rem;
+`;
+
+// left: ${({ theme }) => theme.sizes.maxWidth};
+
 export const Fixed = styled.div`
   position: sticky;
   top: 0.8rem;
+  right: 0;
+  width: 100%;
+  @media (max-width: 650px) {
+    position: static;
+  }
 `;
