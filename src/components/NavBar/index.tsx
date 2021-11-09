@@ -10,12 +10,12 @@ const NavBar: FC = () => (
     </S.Home>
     <S.OptionsWrapper>
       <S.Option
-        to="/work"
+        to="/works"
         activeStyle={{
           fontWeight: 'bold',
         }}
       >
-        Work
+        Works
       </S.Option>
       <span>•</span>
       <S.Option

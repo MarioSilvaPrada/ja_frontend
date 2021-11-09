@@ -61,12 +61,12 @@ const Navigation = () => {
         />
         <Route
           exact
-          path="/work"
+          path="/works"
           component={() => <Projetos projects={projects} />}
         />
         <Route
           exact
-          path="/work/:id"
+          path="/works/:id"
           component={() => <ProductPage getNameTags={getNameTags} />}
         />
         <Route
