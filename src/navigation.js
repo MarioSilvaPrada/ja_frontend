@@ -9,10 +9,13 @@ import Sobre from './routes/Sobre';
 import PageNotFound from './routes/PageNotFound';
 import Footer from 'components/Footer';
 
+import Spinner from 'components/Spinner';
+
 const Navigation = () => {
   const [settings, setSettings] = useState([]);
   const [projects, setProjects] = useState([]);
   const [allTags, setAllTags] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
 
   const getData = async () => {
     const mySettings = await getSettings();
@@ -32,6 +35,8 @@ const Navigation = () => {
     if (tags) {
       setAllTags(tags);
     }
+
+    setIsLoading(false);
   };
 
   const getNameTags = (tagId) => {
@@ -47,7 +52,7 @@ const Navigation = () => {
   useEffect(() => {
     getData();
   }, []);
-  return (
+  return !isLoading ? (
     <Router>
       <Switch>
         <Route
@@ -78,6 +83,8 @@ const Navigation = () => {
       </Switch>
       <Footer settings={settings} />
     </Router>
+  ) : (
+    <Spinner />
   );
 };
 

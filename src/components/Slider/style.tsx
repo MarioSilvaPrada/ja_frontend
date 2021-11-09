@@ -45,6 +45,7 @@ interface ICarousel {
 interface IAnimatedText {
   isSelected: boolean;
   delay?: number;
+  isSpace?: boolean;
 }
 
 const SLIDER_HEIGHT = '40rem';
@@ -95,6 +96,7 @@ export const AnimatedSpan = styled.span<IAnimatedText>`
   opacity: ${({ isSelected }) => (isSelected ? 0 : 1)};
   font-size: 2.5rem;
   font-weight: bold;
+  margin-left: ${({ isSpace }) => (isSpace ? '0.5rem' : 0)};
   ${({ isSelected, delay }) =>
     css`
       animation: ${isSelected ? fadeInDown : fadeOutDown} 0.5s linear forwards;

@@ -33,6 +33,7 @@ const Slider: FC<IProps> = ({ sliderProjects }) => {
           key={`${split[i]}${i}`}
           isSelected={isSelected}
           delay={0.03 * i}
+          isSpace={split[i] === ' '}
         >
           {split[i]}
         </S.AnimatedSpan>
