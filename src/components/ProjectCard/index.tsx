@@ -11,7 +11,7 @@ const ProjectCard: FC<IProps> = ({ project }) => {
   return (
     <S.PressWrapper
       to={{
-        pathname: `/projetos/${project.id}`,
+        pathname: `/work/${project.id}`,
         state: { project },
       }}
     >

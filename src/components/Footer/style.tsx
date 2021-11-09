@@ -1,10 +1,15 @@
 import styled from 'styled-components';
 
-export const SocialWrapper = styled.div`
+interface IProps {
+  isHomePage?: boolean;
+}
+
+export const SocialWrapper = styled.div<IProps>`
   display: flex;
-  align-items: flex-end;
+  align-items: center;
   justify-content: center;
   margin-bottom: 3rem;
+  margin-top: ${({ isHomePage }) => (isHomePage ? '3rem' : 0)};
   a:not(:last-child) {
     margin-right: 1rem;
   }

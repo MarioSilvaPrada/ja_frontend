@@ -61,17 +61,17 @@ const Navigation = () => {
         />
         <Route
           exact
-          path="/projetos"
+          path="/work"
           component={() => <Projetos projects={projects} />}
         />
         <Route
           exact
-          path="/projetos/:id"
+          path="/work/:id"
           component={() => <ProductPage getNameTags={getNameTags} />}
         />
         <Route
           exact
-          path="/sobre"
+          path="/studio"
           component={() => <Sobre settings={settings} />}
         />
         <Route path="*" component={PageNotFound} />

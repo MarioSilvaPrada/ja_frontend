@@ -1,22 +1,18 @@
 import React from 'react';
-import {
-  AiOutlineInstagram,
-  AiOutlineLinkedin,
-  AiOutlineFacebook,
-} from 'react-icons/ai';
+import { FiInstagram, FiLinkedin, FiFacebook } from 'react-icons/fi';
 
 const social = [
   {
-    Icon: (color = 'black') => <AiOutlineInstagram color={color} />,
+    Icon: (color = 'black') => <FiInstagram color={color} />,
     url: 'https://www.instagram.com/',
   },
   {
-    Icon: (color = 'black') => <AiOutlineLinkedin color={color} />,
-    url: 'https://www.linkedin.com/',
+    Icon: (color = 'black') => <FiFacebook color={color} />,
+    url: 'https://www.facebook.com/',
   },
   {
-    Icon: (color = 'black') => <AiOutlineFacebook color={color} />,
-    url: 'https://www.facebook.com/',
+    Icon: (color = 'black') => <FiLinkedin color={color} />,
+    url: 'https://www.linkedin.com/',
   },
 ];
 

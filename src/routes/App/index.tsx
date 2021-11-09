@@ -9,14 +9,16 @@ interface IProps {
   sliderProjects: Array<IProjects>;
 }
 
-const App: FC<IProps> = ({ sliderProjects }) => (
-  <Layout>
-    <S.AppWrapper>
-      <S.SlideWrapper>
-        <Slider sliderProjects={sliderProjects} />
-      </S.SlideWrapper>
-    </S.AppWrapper>
-  </Layout>
-);
+const App: FC<IProps> = ({ sliderProjects }) => {
+  return (
+    <Layout>
+      <S.AppWrapper>
+        <S.SlideWrapper>
+          <Slider sliderProjects={sliderProjects} />
+        </S.SlideWrapper>
+      </S.AppWrapper>
+    </Layout>
+  );
+};
 
 export default App;
