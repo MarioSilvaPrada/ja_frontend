@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
-export const Title = styled.h3`
+export const Title = styled.h2`
   margin-bottom: 0.5rem;
 
   @media (max-width: 650px) {
