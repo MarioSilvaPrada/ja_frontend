@@ -29,6 +29,15 @@ export const Image = styled.img`
 export const Container = styled.div`
   margin-top: 1.5rem;
   padding-bottom: 1.5rem;
+
+  @media (max-width: 1500px) {
+    width: 40rem;
+    margin: 0 auto;
+  }
+
+  @media (max-width: 650px) {
+    width: 100%;
+  }
 `;
 
 export const StyledLink = styled(Link)`
@@ -40,6 +49,7 @@ export const StyledLink = styled(Link)`
 export const Wrapper = styled.div`
   display: flex;
   position: relative;
+
   @media (max-width: 650px) {
     display: flex;
     flex-direction: column-reverse;
@@ -87,9 +97,11 @@ export const SideInfo = styled.div`
   right: -20rem;
   height: 100%;
   padding-right: 0.5rem;
-`;
 
-// left: ${({ theme }) => theme.sizes.maxWidth};
+  @media (max-width: 1080px) {
+    display: none;
+  }
+`;
 
 export const Fixed = styled.div`
   position: sticky;
@@ -98,5 +110,14 @@ export const Fixed = styled.div`
   width: 100%;
   @media (max-width: 650px) {
     position: static;
+  }
+`;
+
+export const MobileInfoContainer = styled.div`
+  display: none;
+  margin-bottom: 1rem;
+
+  @media (max-width: 1080px) {
+    display: block;
   }
 `;

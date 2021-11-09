@@ -27,8 +27,14 @@ a {
   color: inherit;
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 1500px) {
   html {
     font-size: 90%;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  html {
+    font-size: 85%;
   }
 }

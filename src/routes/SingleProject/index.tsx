@@ -84,11 +84,34 @@ const Projetos: FC<IProps> = ({ getNameTags }) => {
     },
   ];
 
+  const getInfoSection = () => {
+    return (
+      <>
+        {singleProject?.tags && (
+          <S.TagsWrapper>
+            {singleProject?.tags.map((tagId) => (
+              <S.TagContainer key={tagId}>
+                <p>{getNameTags(tagId)}</p>
+              </S.TagContainer>
+            ))}
+          </S.TagsWrapper>
+        )}
+        {projectInfo.map(({ name, value }) => (
+          <S.RowInfo key={name}>
+            <S.RowTitle>{name}: </S.RowTitle>
+            <p>{value}</p>
+          </S.RowInfo>
+        ))}
+      </>
+    );
+  };
+
   return (
     singleProject && (
       <Layout>
         <S.Container>
           <S.Title>{singleProject?.name}</S.Title>
+          <S.MobileInfoContainer>{getInfoSection()}</S.MobileInfoContainer>
           <S.Wrapper>
             <S.Column>
               {singleProject?.section.map((section) => (
@@ -107,26 +130,10 @@ const Projetos: FC<IProps> = ({ getNameTags }) => {
               ))}
             </S.Column>
             <S.SideInfo>
-              <S.Fixed>
-                {singleProject?.tags && (
-                  <S.TagsWrapper>
-                    {singleProject?.tags.map((tagId) => (
-                      <S.TagContainer key={tagId}>
-                        <p>{getNameTags(tagId)}</p>
-                      </S.TagContainer>
-                    ))}
-                  </S.TagsWrapper>
-                )}
-                {projectInfo.map(({ name, value }) => (
-                  <S.RowInfo key={name}>
-                    <S.RowTitle>{name}: </S.RowTitle>
-                    <p>{value}</p>
-                  </S.RowInfo>
-                ))}
-              </S.Fixed>
+              <S.Fixed>{getInfoSection()}</S.Fixed>
             </S.SideInfo>
           </S.Wrapper>
-          <S.StyledLink to="/projetos">Voltar para Projetos</S.StyledLink>
+          <S.StyledLink to="/works">Back to works</S.StyledLink>
         </S.Container>
       </Layout>
     )
