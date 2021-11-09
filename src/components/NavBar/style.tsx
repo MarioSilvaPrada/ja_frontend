@@ -30,6 +30,6 @@ export const Option = styled(NavLink)`
 `;
 
 export const StyledImage = styled.img`
-  width: 3rem;
+  width: 8rem;
   margin-bottom: 3rem;
 `;
