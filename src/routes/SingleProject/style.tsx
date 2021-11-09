@@ -96,7 +96,7 @@ export const SideInfo = styled.div`
   position: absolute;
   right: -20rem;
   height: 100%;
-  padding-right: 0.5rem;
+  padding-left: 0.5rem;
 
   @media (max-width: 1080px) {
     display: none;
@@ -107,10 +107,7 @@ export const Fixed = styled.div`
   position: sticky;
   top: 0.8rem;
   right: 0;
-  width: 100%;
-  @media (max-width: 650px) {
-    position: static;
-  }
+  max-width: 20rem;
 `;
 
 export const MobileInfoContainer = styled.div`

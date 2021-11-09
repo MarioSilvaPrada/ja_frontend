@@ -60,9 +60,9 @@ export const Container = styled.div`
   overflow-x: hidden;
   z-index: 1;
 
-  @media (max-width: 500px) {
+  @media (max-width: 700px) {
     width: 100%;
-    height: 32rem;
+    height: 30rem;
     margin-right: 0;
   }
 `;

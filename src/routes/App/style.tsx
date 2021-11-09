@@ -35,7 +35,6 @@ export const SlideWrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100%;
   display: flex;
   justify-content: center;
   width: 100%;
@@ -44,5 +43,4 @@ export const SlideWrapper = styled.div`
 export const AppWrapper = styled.div`
   display: flex;
   justify-content: center;
-  height: 100%;
 `;
