@@ -43,26 +43,25 @@ const Slider: FC<IProps> = ({ sliderProjects }) => {
     return arrayString;
   };
 
-  const automaticMovement = () => {
-    if (item + 1 === sliderProjects.length) {
-      setDirection('left');
-      setTimeout(() => setItem(item - 1), 4000);
-      return;
-    }
-    if (item === 0) {
-      setDirection('right');
-      setTimeout(() => setItem(item + 1), 4000);
-      return;
-    }
-    if (direction === 'right') {
-      setTimeout(() => setItem(item + 1), 4000);
-    }
-    if (direction === 'left') {
-      setTimeout(() => setItem(item - 1), 4000);
-    }
-  };
-
   useEffect(() => {
+    const automaticMovement = () => {
+      if (item + 1 === sliderProjects.length) {
+        setDirection('left');
+        setTimeout(() => setItem(item - 1), 4000);
+        return;
+      }
+      if (item === 0) {
+        setDirection('right');
+        setTimeout(() => setItem(item + 1), 4000);
+        return;
+      }
+      if (direction === 'right') {
+        setTimeout(() => setItem(item + 1), 4000);
+      }
+      if (direction === 'left') {
+        setTimeout(() => setItem(item - 1), 4000);
+      }
+    };
     if (isAutomatic) {
       automaticMovement();
     } else {

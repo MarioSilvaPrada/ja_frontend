@@ -65,6 +65,7 @@ export const Container = styled.div`
     width: 100%;
     height: 30rem;
     margin-right: 0;
+    overflow-y: hidden;
   }
 `;
 
@@ -102,12 +103,18 @@ export const AnimatedSpan = styled.span<IAnimatedText>`
       animation: ${isSelected ? fadeInDown : fadeOutDown} 0.5s linear forwards;
       animation-delay: ${delay}s;
     `};
+
+  @media (max-width: 700px) {
+    font-size: 1.8rem;
+  }
 `;
 
 export const Layer = styled.div`
   position: absolute;
-  width: 100%;
-  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   background: rgba(255, 255, 255, 0.25);
 `;
 
