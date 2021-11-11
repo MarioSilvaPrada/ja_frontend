@@ -94,7 +94,7 @@ export const RowTitle = styled.h5`
 
 export const SideInfo = styled.div`
   position: absolute;
-  right: -20rem;
+  right: -15rem;
   height: 100%;
   padding-left: 0.5rem;
 
