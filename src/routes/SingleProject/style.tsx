@@ -94,7 +94,7 @@ export const RowTitle = styled.h5`
 
 export const SideInfo = styled.div`
   position: absolute;
-  right: -15rem;
+  right: -20rem;
   height: 100%;
   padding-left: 0.5rem;
 
@@ -107,7 +107,7 @@ export const Fixed = styled.div`
   position: sticky;
   top: 0.8rem;
   right: 0;
-  max-width: 20rem;
+  width: 20rem;
 `;
 
 export const MobileInfoContainer = styled.div`
