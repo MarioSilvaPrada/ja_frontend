@@ -20,9 +20,11 @@ const ProjectCard: FC<IProps> = ({ project }) => {
         src={project.main_image}
         actual={
           <S.ImageCard imgURL={project.main_image}>
-            <S.Layer>
-              <S.H3>{project.name}</S.H3>
-            </S.Layer>
+            <S.HoverImage imgURL={project.hover_image}>
+              <S.Layer>
+                <S.H3>{project.name}</S.H3>
+              </S.Layer>
+            </S.HoverImage>
           </S.ImageCard>
         }
       />

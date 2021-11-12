@@ -16,6 +16,24 @@ export const ImageCard = styled.div<IProps>`
   cursor: pointer;
   transition: 0.5s;
   position: relative;
+  z-index: 2;
+  transition: 0.5s;
+`;
+
+export const HoverImage = styled.div<IProps>`
+  background-image: url(${({ imgURL }) => imgURL || ''});
+  background-position: center;
+  background-size: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transition: 0.8s;
+  opacity: 0;
+  &:hover {
+    opacity: 1;
+  }
 `;
 
 export const Layer = styled.div`
@@ -24,7 +42,7 @@ export const Layer = styled.div`
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(255, 255, 255, 0.7);
+  background-color: rgba(255, 255, 255, 0.7);
   opacity: 0;
   transition: 0.5s;
   display: flex;

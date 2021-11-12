@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 
-import logo from '../../assets/logo2.svg';
+import logo from '../../assets/logo.svg';
 import * as S from './style';
 
 const NavBar: FC = () => (

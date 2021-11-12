@@ -8,8 +8,7 @@ export const SocialWrapper = styled.div<IProps>`
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 3rem;
-  margin-top: ${({ isHomePage }) => (isHomePage ? '3rem' : 0)};
+  margin-bottom: ${({ isHomePage }) => (isHomePage ? 0 : '3rem')};
   a:not(:last-child) {
     margin-right: 1rem;
   }
@@ -39,16 +38,21 @@ export const ParagraphWrapper = styled.div`
   text-align: center;
 `;
 
+export const DotWrapper = styled.span`
+  margin: 0 0.7rem;
+`;
+
 export const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
+  align-items: center;
+  width: 100%;
 `;
 
 export const ContactWrapper = styled.div`
   display: flex;
   algin-items: center;
   justify-content: space-between;
-  margin 0 1rem;
 `;
 
 export const Title = styled.p`

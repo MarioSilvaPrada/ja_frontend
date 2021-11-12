@@ -23,7 +23,7 @@ const Footer: FC<IFooter> = ({ settings }) => {
             <S.Title>Contactos</S.Title>
             <S.ContactWrapper>
               <S.Paragraph>{settings?.admin_email}</S.Paragraph>
-              <span>•</span>
+              <S.DotWrapper>•</S.DotWrapper>
               <S.Paragraph>
                 (+351)
                 {settings?.admin_phone_number}

@@ -84,9 +84,8 @@ export const TextWrapper = styled.div`
   left: -3rem;
   font-size: 3rem;
   color: black;
-  padding: 0.5rem;
   display: flex;
-
+  overflow: hidden;
   @media (max-width: 500px) {
     left: 1rem;
     bottom: 1rem;
@@ -97,10 +96,11 @@ export const AnimatedSpan = styled.span<IAnimatedText>`
   opacity: ${({ isSelected }) => (isSelected ? 0 : 1)};
   font-size: 2.5rem;
   font-weight: bold;
+  margin-bottom: -0.2rem;
   margin-left: ${({ isSpace }) => (isSpace ? '0.5rem' : 0)};
   ${({ isSelected, delay }) =>
     css`
-      animation: ${isSelected ? fadeInDown : fadeOutDown} 0.5s linear forwards;
+      animation: ${isSelected ? fadeInDown : fadeOutDown} 0.3s linear forwards;
       animation-delay: ${delay}s;
     `};
 

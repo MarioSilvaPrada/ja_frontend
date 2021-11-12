@@ -63,6 +63,7 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       template: './public/index.html', //source html
+      favicon: 'src/assets/logo.svg',
     }),
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify(

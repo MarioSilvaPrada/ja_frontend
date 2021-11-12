@@ -32,6 +32,7 @@ export const PartnerLink = styled.a`
 
 export const Title = styled.h4`
   margin-bottom: 0.6rem;
+  text-transform: uppercase;
 `;
 
 export const AboutWrapper = styled.div`

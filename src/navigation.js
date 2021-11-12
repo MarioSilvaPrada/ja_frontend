@@ -49,6 +49,8 @@ const Navigation = () => {
     }
   };
 
+  console.log({ projects });
+
   useEffect(() => {
     getData();
   }, []);

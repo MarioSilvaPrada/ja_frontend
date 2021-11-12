@@ -51,6 +51,10 @@ const Projetos: FC<IProps> = ({ getNameTags }) => {
       value: singleProject?.photographs,
     },
     {
+      name: 'Images',
+      value: singleProject?.images,
+    },
+    {
       name: 'Area',
       value: `${singleProject?.area} m²`,
     },
@@ -96,12 +100,16 @@ const Projetos: FC<IProps> = ({ getNameTags }) => {
             ))}
           </S.TagsWrapper>
         )}
-        {projectInfo.map(({ name, value }) => (
-          <S.RowInfo key={name}>
-            <S.RowTitle>{name}: </S.RowTitle>
-            <p>{value}</p>
-          </S.RowInfo>
-        ))}
+        {projectInfo.map(({ name, value }) => {
+          if (value) {
+            return (
+              <S.RowInfo key={name}>
+                <S.RowTitle>{name}: </S.RowTitle>
+                <p>{value}</p>
+              </S.RowInfo>
+            );
+          }
+        })}
       </>
     );
   };

@@ -18,11 +18,13 @@ export interface ISettings {
 export interface IProjects {
   id: number;
   main_image: string;
+  hover_image: string;
   name: string;
   tags: Array<number>;
   architects: string;
   engineering: string;
   photographs: string;
+  images: string;
   area: string;
   tipology: string;
   construction: string;

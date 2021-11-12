@@ -49,7 +49,7 @@ const Sobre: FC<IProps> = ({ settings }) => {
           )}
           {partners.length > 0 && (
             <>
-              <S.Title>Partners:</S.Title>
+              <S.Title>Partners</S.Title>
               <S.PartnersWrapper>
                 {partners.map((partner) => (
                   <S.PartnerLink
