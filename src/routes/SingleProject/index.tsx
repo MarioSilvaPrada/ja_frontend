@@ -1,6 +1,6 @@
 import React, { FC, useState, useEffect } from 'react';
 import Layout from 'components/Layout';
-import { useParams, useLocation } from 'react-router-dom';
+import { useParams, useLocation, useHistory } from 'react-router-dom';
 import { getSingleProject } from 'api';
 import { IProjects } from 'utils/interfaces';
 import LazyImage from 'components/LazyImage';
@@ -20,6 +20,8 @@ interface ILocationState {
 const Projetos: FC<IProps> = ({ getNameTags }) => {
   const [singleProject, setSingProject] = useState<IProjects | null>(null);
   const location = useLocation();
+  const history = useHistory();
+
   const { state } = location as ILocationState;
   const { id }: { id: string } = useParams();
 
@@ -151,7 +153,9 @@ const Projetos: FC<IProps> = ({ getNameTags }) => {
               <S.Fixed>{getInfoSection()}</S.Fixed>
             </S.SideInfo>
           </S.Wrapper>
-          <S.StyledLink to="/works">Back to works</S.StyledLink>
+          <S.StyledLink to="/works" onClick={() => history.goBack()}>
+            Back to works
+          </S.StyledLink>
         </S.Container>
       </Layout>
     )

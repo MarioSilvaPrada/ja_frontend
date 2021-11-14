@@ -7,9 +7,15 @@ import * as S from './style';
 
 interface IProps {
   projects: Array<IProjects>;
+  scrollPosition: number;
+  setScrollPosition: (num: number) => void;
 }
 
-const Projetos: FC<IProps> = ({ projects }) => {
+const Projetos: FC<IProps> = ({
+  projects,
+  scrollPosition,
+  setScrollPosition,
+}) => {
   const [allProjects, setAllProjects] = useState<Array<IProjects>>([]);
 
   const fetchProjects = async () => {
@@ -25,6 +31,14 @@ const Projetos: FC<IProps> = ({ projects }) => {
     } else {
       fetchProjects();
     }
+  }, []);
+
+  useEffect(() => {
+    // window.addEventListener('scroll', () => {
+    //   setScrollPosition(window.pageYOffset);
+    // });
+
+    // window.scrollTo(0, scrollPosition);
   }, []);
 
   return (

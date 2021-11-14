@@ -17,6 +17,8 @@ const Navigation = () => {
   const [allTags, setAllTags] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
+  const [scrollPosition, setScrollPosition] = useState(0);
+
   const getData = async () => {
     const mySettings = await getSettings();
 
@@ -49,8 +51,6 @@ const Navigation = () => {
     }
   };
 
-  console.log({ projects });
-
   useEffect(() => {
     getData();
   }, []);
@@ -69,7 +69,13 @@ const Navigation = () => {
         <Route
           exact
           path="/works"
-          component={() => <Projetos projects={projects} />}
+          component={() => (
+            <Projetos
+              projects={projects}
+              scrollPosition={scrollPosition}
+              setScrollPosition={setScrollPosition}
+            />
+          )}
         />
         <Route
           exact
