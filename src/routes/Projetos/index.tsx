@@ -30,9 +30,19 @@ const Projetos: FC<IProps> = ({ projects }) => {
   return (
     <Layout>
       <S.Container>
-        {allProjects.map((el) => (
-          <ProjectCard key={el.id} project={el} />
-        ))}
+        {allProjects
+          .sort((a, b) => {
+            if (a.position < b.position) {
+              return -1;
+            }
+            if (a.position > b.position) {
+              return 1;
+            }
+            return 0;
+          })
+          .map((el) => (
+            <ProjectCard key={el.id} project={el} />
+          ))}
       </S.Container>
     </Layout>
   );

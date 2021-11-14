@@ -125,15 +125,25 @@ const Projetos: FC<IProps> = ({ getNameTags }) => {
               {singleProject?.section.map((section) => (
                 <div key={section.id}>
                   {getTextParagraphs(section.description, S.Description)}
-                  {section.image.map(({ image }) => (
-                    <LazyImage
-                      myWidth="100%"
-                      key={`${section.id}${image}`}
-                      alt="project image"
-                      src={image}
-                      actual={<S.Image src={image} />}
-                    />
-                  ))}
+                  {section.image
+                    .sort((a, b) => {
+                      if (a.image_name < b.image_name) {
+                        return -1;
+                      }
+                      if (a.image_name > b.image_name) {
+                        return 1;
+                      }
+                      return 0;
+                    })
+                    .map(({ image }) => (
+                      <LazyImage
+                        myWidth="100%"
+                        key={`${section.id}${image}`}
+                        alt="project image"
+                        src={image}
+                        actual={<S.Image src={image} />}
+                      />
+                    ))}
                 </div>
               ))}
             </S.Column>

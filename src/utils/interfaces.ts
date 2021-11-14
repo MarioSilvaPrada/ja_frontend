@@ -17,6 +17,7 @@ export interface ISettings {
 
 export interface IProjects {
   id: number;
+  position: string;
   main_image: string;
   hover_image: string;
   name: string;
