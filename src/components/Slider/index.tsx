@@ -4,9 +4,10 @@ import * as S from './style';
 
 interface IProps {
   sliderProjects: Array<IProjects>;
+  isEN: boolean;
 }
 
-const Slider: FC<IProps> = ({ sliderProjects }) => {
+const Slider: FC<IProps> = ({ sliderProjects, isEN }) => {
   const [item, setItem] = useState(0);
   const [direction, setDirection] = useState('right');
   const [isAutomatic, setIsAutomatic] = useState(true);
@@ -79,11 +80,13 @@ const Slider: FC<IProps> = ({ sliderProjects }) => {
         <S.Button left onClick={() => goToItem('left')} />
         <S.Button onClick={() => goToItem('right')} />
         <S.CarouselWrapper itemIndex={item}>
-          {sliderProjects.map(({ main_image, name, id }, i) => (
+          {sliderProjects.map(({ main_image, name, name_en, id }, i) => (
             <S.StyledLink to={`works/${id}`} key={id}>
               <S.Card>
                 <S.Layer />
-                <S.TextWrapper>{animateText(name, item === i)}</S.TextWrapper>
+                <S.TextWrapper>
+                  {animateText(isEN ? name_en : name, item === i)}
+                </S.TextWrapper>
                 <S.Image urlImage={main_image} />
               </S.Card>
             </S.StyledLink>

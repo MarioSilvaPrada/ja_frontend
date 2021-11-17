@@ -9,9 +9,10 @@ import * as S from './style';
 
 interface IProps {
   settings: ISettings;
+  isEN: boolean;
 }
 
-const Sobre: FC<IProps> = ({ settings }) => {
+const Sobre: FC<IProps> = ({ settings, isEN }) => {
   const [partners, setPartners] = useState([]);
   const [userSettings, setUserSettings] = useState<ISettings | null>(null);
 
@@ -37,6 +38,8 @@ const Sobre: FC<IProps> = ({ settings }) => {
     getAllPartners();
   }, []);
 
+  console.log({ settings });
+
   return (
     <Layout>
       <S.Wrapper>
@@ -44,7 +47,10 @@ const Sobre: FC<IProps> = ({ settings }) => {
           <S.AboutImg src={userSettings?.about_me_image} />
           {userSettings?.description && (
             <S.AboutWrapper>
-              {getTextParagraphs(userSettings.description, S.AboutParagraph)}
+              {getTextParagraphs(
+                isEN ? userSettings.description_en : userSettings.description,
+                S.AboutParagraph
+              )}
             </S.AboutWrapper>
           )}
           {partners.length > 0 && (

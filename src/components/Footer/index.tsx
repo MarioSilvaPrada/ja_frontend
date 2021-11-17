@@ -1,6 +1,7 @@
 import React, { FC } from 'react';
 import social from 'utils/social';
 import { ISettings } from 'utils/interfaces';
+import translation from '../../../translations/en_pt.js';
 
 import { useLocation } from 'react-router-dom';
 
@@ -8,9 +9,10 @@ import * as S from './style';
 
 interface IFooter {
   settings: ISettings;
+  isEN: boolean;
 }
 
-const Footer: FC<IFooter> = ({ settings }) => {
+const Footer: FC<IFooter> = ({ settings, isEN }) => {
   const location = useLocation();
 
   const isHomePage = location.pathname === '/';
@@ -20,7 +22,7 @@ const Footer: FC<IFooter> = ({ settings }) => {
       <S.Wrapper>
         {!isHomePage && (
           <S.ParagraphWrapper>
-            <S.Title>Contactos</S.Title>
+            <S.Title>{translation[isEN ? 'EN' : 'PT'].FOOTER.CONTACTS}</S.Title>
             <S.ContactWrapper>
               <S.Paragraph>{settings?.admin_email}</S.Paragraph>
               <S.DotWrapper>•</S.DotWrapper>

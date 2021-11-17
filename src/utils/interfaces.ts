@@ -12,6 +12,7 @@ export interface ISettings {
   admin_name: string;
   admin_phone_number: string;
   description: string;
+  description_en: string;
   about_me_image: string;
 }
 
@@ -21,6 +22,7 @@ export interface IProjects {
   main_image: string;
   hover_image: string;
   name: string;
+  name_en: string;
   tags: Array<number>;
   architects: string;
   engineering: string;
@@ -39,6 +41,7 @@ export interface IProjects {
     project: number;
     section_name: string;
     description: string;
+    description_en: string;
     image: Array<ImageProps>;
   }>;
 }

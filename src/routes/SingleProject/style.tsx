@@ -57,6 +57,7 @@ export const Wrapper = styled.div`
 `;
 
 export const Column = styled.div`
+  width: 100%;
   &:first-child {
     margin-right: 0.8rem;
   }

@@ -1,9 +1,16 @@
 import React, { FC } from 'react';
 
+import translation from '../../../translations/en_pt.js';
+
 import logo from '../../assets/logo.svg';
 import * as S from './style';
 
-const NavBar: FC = () => (
+interface IProps {
+  isEN: boolean;
+  setIsEN: (bool: boolean) => void;
+}
+
+const NavBar: FC<IProps> = ({ isEN, setIsEN }) => (
   <S.NavContainer>
     <S.Home to="/">
       <S.StyledImage src={logo} alt="logo" />
@@ -15,7 +22,7 @@ const NavBar: FC = () => (
           fontWeight: 'normal',
         }}
       >
-        Works
+        {translation[isEN ? 'EN' : 'PT'].HEADER.WORKS}
       </S.Option>
       <span>•</span>
       <S.Option
@@ -24,9 +31,17 @@ const NavBar: FC = () => (
           fontWeight: 'normal',
         }}
       >
-        Studio
+        {translation[isEN ? 'EN' : 'PT'].HEADER.STUDIO}
       </S.Option>
     </S.OptionsWrapper>
+    <S.TranslationWrapper>
+      <S.LangPress isSelected={isEN} onClick={() => setIsEN(true)}>
+        EN
+      </S.LangPress>
+      <S.LangPress isSelected={!isEN} onClick={() => setIsEN(false)}>
+        PT
+      </S.LangPress>
+    </S.TranslationWrapper>
   </S.NavContainer>
 );
 

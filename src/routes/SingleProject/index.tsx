@@ -5,11 +5,13 @@ import { getSingleProject } from 'api';
 import { IProjects } from 'utils/interfaces';
 import LazyImage from 'components/LazyImage';
 import getTextParagraphs from 'utils/textParagraph';
+import translation from '../../../translations/en_pt';
 
 import * as S from './style';
 
 interface IProps {
   getNameTags: (id: number) => string;
+  isEN: boolean;
 }
 interface ILocationState {
   state: {
@@ -17,7 +19,7 @@ interface ILocationState {
   };
 }
 
-const Projetos: FC<IProps> = ({ getNameTags }) => {
+const Projetos: FC<IProps> = ({ getNameTags, isEN }) => {
   const [singleProject, setSingProject] = useState<IProjects | null>(null);
   const location = useLocation();
   const history = useHistory();
@@ -41,51 +43,51 @@ const Projetos: FC<IProps> = ({ getNameTags }) => {
 
   const projectInfo = [
     {
-      name: 'Arquitetura',
+      name: translation[isEN ? 'EN' : 'PT'].SINGLE_PROJECT.ARCHITECTURE,
       value: singleProject?.architects,
     },
     {
-      name: 'Engenharia',
+      name: translation[isEN ? 'EN' : 'PT'].SINGLE_PROJECT.ENGINEERING,
       value: singleProject?.engineering,
     },
     {
-      name: 'Fotografia',
+      name: translation[isEN ? 'EN' : 'PT'].SINGLE_PROJECT.PHOTOGRAPHY,
       value: singleProject?.photographs,
     },
     {
-      name: 'Images',
+      name: translation[isEN ? 'EN' : 'PT'].SINGLE_PROJECT.IMAGES,
       value: singleProject?.images,
     },
     {
-      name: 'Area',
+      name: translation[isEN ? 'EN' : 'PT'].SINGLE_PROJECT.AREA,
       value: `${singleProject?.area} m²`,
     },
     {
-      name: 'Typology',
+      name: translation[isEN ? 'EN' : 'PT'].SINGLE_PROJECT.TYPOLOGY,
       value: singleProject?.tipology,
     },
     {
-      name: 'Year',
+      name: translation[isEN ? 'EN' : 'PT'].SINGLE_PROJECT.YEAR,
       value: singleProject?.year,
     },
     {
-      name: 'Construction',
+      name: translation[isEN ? 'EN' : 'PT'].SINGLE_PROJECT.CONSTRUCTION,
       value: singleProject?.construction,
     },
     {
-      name: 'State',
+      name: translation[isEN ? 'EN' : 'PT'].SINGLE_PROJECT.STATE,
       value: singleProject?.state,
     },
     {
-      name: 'Program',
+      name: translation[isEN ? 'EN' : 'PT'].SINGLE_PROJECT.PROGRAM,
       value: singleProject?.program,
     },
     {
-      name: 'Location',
+      name: translation[isEN ? 'EN' : 'PT'].SINGLE_PROJECT.LOCATION,
       value: singleProject?.location,
     },
     {
-      name: 'Client',
+      name: translation[isEN ? 'EN' : 'PT'].SINGLE_PROJECT.CLIENT,
       value: singleProject?.client,
     },
   ];
@@ -120,13 +122,18 @@ const Projetos: FC<IProps> = ({ getNameTags }) => {
     singleProject && (
       <Layout>
         <S.Container>
-          <S.Title>{singleProject?.name}</S.Title>
+          <S.Title>
+            {isEN ? singleProject?.name_en : singleProject?.name}
+          </S.Title>
           <S.MobileInfoContainer>{getInfoSection()}</S.MobileInfoContainer>
           <S.Wrapper>
             <S.Column>
               {singleProject?.section.map((section) => (
                 <div key={section.id}>
-                  {getTextParagraphs(section.description, S.Description)}
+                  {getTextParagraphs(
+                    isEN ? section.description_en : section.description,
+                    S.Description
+                  )}
                   {section.image
                     .sort((a, b) => {
                       if (a.image_name < b.image_name) {

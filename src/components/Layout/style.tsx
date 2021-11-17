@@ -13,7 +13,7 @@ const homeRouteStyle = css`
 export const Wrapper = styled.div<LayoutProps>`
   max-width: ${({ theme }) => theme.sizes.maxWidth};
   margin: 0 auto;
-  padding: 1rem 0.5rem;
+  padding: 0 0.5rem;
   position: relative;
 
   ${({ pathName }) => pathName === '/' && homeRouteStyle}
