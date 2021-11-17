@@ -27,6 +27,14 @@ const Projetos: FC<IProps> = ({ getNameTags, isEN }) => {
   const { state } = location as ILocationState;
   const { id }: { id: string } = useParams();
 
+  const onGoBack = () => {
+    if (history.action !== 'POP') {
+      history.goBack();
+      return;
+    }
+    history.push('/works');
+  };
+
   useEffect(() => {
     const getProject = async (projectId: string) => {
       const res = await getSingleProject(projectId);
@@ -160,7 +168,7 @@ const Projetos: FC<IProps> = ({ getNameTags, isEN }) => {
               <S.Fixed>{getInfoSection()}</S.Fixed>
             </S.SideInfo>
           </S.Wrapper>
-          <S.StyledLink to="/works" onClick={() => history.goBack()}>
+          <S.StyledLink to="/works" onClick={() => onGoBack()}>
             Back to works
           </S.StyledLink>
         </S.Container>

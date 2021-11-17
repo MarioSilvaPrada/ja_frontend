@@ -38,14 +38,12 @@ const Sobre: FC<IProps> = ({ settings, isEN }) => {
     getAllPartners();
   }, []);
 
-  console.log({ settings });
-
   return (
     <Layout>
       <S.Wrapper>
         <S.Section>
           <S.AboutImg src={userSettings?.about_me_image} />
-          {userSettings?.description && (
+          {userSettings?.description && userSettings?.description_en && (
             <S.AboutWrapper>
               {getTextParagraphs(
                 isEN ? userSettings.description_en : userSettings.description,
