@@ -19,8 +19,6 @@ const Navigation = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [isEN, setIsEN] = useState(true);
 
-  const [scrollPosition, setScrollPosition] = useState(0);
-
   const getData = async () => {
     const mySettings = await getSettings();
 
@@ -74,17 +72,7 @@ const Navigation = () => {
             />
           )}
         />
-        <Route
-          exact
-          path="/works"
-          component={() => (
-            <Projetos
-              projects={projects}
-              scrollPosition={scrollPosition}
-              setScrollPosition={setScrollPosition}
-            />
-          )}
-        />
+        <Route exact path="/works" component={() => <Projetos isEN={isEN} />} />
         <Route
           exact
           path="/works/:id"

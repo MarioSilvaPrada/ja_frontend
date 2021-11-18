@@ -7,15 +7,10 @@ import * as S from './style';
 
 interface IProps {
   projects: Array<IProjects>;
-  scrollPosition: number;
-  setScrollPosition: (num: number) => void;
+  IsEN: boolean;
 }
 
-const Projetos: FC<IProps> = ({
-  projects,
-  scrollPosition,
-  setScrollPosition,
-}) => {
+const Projetos: FC<IProps> = ({ projects, IsEN }) => {
   const [allProjects, setAllProjects] = useState<Array<IProjects>>([]);
 
   const fetchProjects = async () => {
@@ -37,7 +32,6 @@ const Projetos: FC<IProps> = ({
     // window.addEventListener('scroll', () => {
     //   setScrollPosition(window.pageYOffset);
     // });
-
     // window.scrollTo(0, scrollPosition);
   }, []);
 
@@ -55,7 +49,7 @@ const Projetos: FC<IProps> = ({
             return 0;
           })
           .map((el) => (
-            <ProjectCard key={el.id} project={el} />
+            <ProjectCard key={el.id} project={el} IsEN={IsEN} />
           ))}
       </S.Container>
     </Layout>
