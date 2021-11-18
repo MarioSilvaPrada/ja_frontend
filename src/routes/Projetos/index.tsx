@@ -7,10 +7,10 @@ import * as S from './style';
 
 interface IProps {
   projects: Array<IProjects>;
-  IsEN: boolean;
+  isEN: boolean;
 }
 
-const Projetos: FC<IProps> = ({ projects, IsEN }) => {
+const Projetos: FC<IProps> = ({ projects, isEN }) => {
   const [allProjects, setAllProjects] = useState<Array<IProjects>>([]);
 
   const fetchProjects = async () => {
@@ -42,7 +42,7 @@ const Projetos: FC<IProps> = ({ projects, IsEN }) => {
             return 0;
           })
           .map((el) => (
-            <ProjectCard key={el.id} project={el} IsEN={IsEN} />
+            <ProjectCard key={el.id} project={el} isEN={isEN} />
           ))}
       </S.Container>
     </Layout>

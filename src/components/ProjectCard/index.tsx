@@ -5,10 +5,10 @@ import * as S from './style';
 
 interface IProps {
   project: IProjects;
-  IsEN: boolean;
+  isEN: boolean;
 }
 
-const ProjectCard: FC<IProps> = ({ project, IsEN }) => {
+const ProjectCard: FC<IProps> = ({ project, isEN }) => {
   return (
     <S.PressWrapper
       to={{
@@ -23,7 +23,7 @@ const ProjectCard: FC<IProps> = ({ project, IsEN }) => {
           <S.ImageCard imgURL={project.main_image}>
             <S.HoverImage imgURL={project.hover_image}>
               <S.Layer>
-                <S.H3>{IsEN ? project.name_en : project.name}</S.H3>
+                <S.H3>{isEN ? project.name_en : project.name}</S.H3>
               </S.Layer>
             </S.HoverImage>
           </S.ImageCard>
