@@ -28,13 +28,6 @@ const Projetos: FC<IProps> = ({ projects, IsEN }) => {
     }
   }, []);
 
-  useEffect(() => {
-    // window.addEventListener('scroll', () => {
-    //   setScrollPosition(window.pageYOffset);
-    // });
-    // window.scrollTo(0, scrollPosition);
-  }, []);
-
   return (
     <Layout>
       <S.Container>
