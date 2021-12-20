@@ -9,13 +9,6 @@ export const Title = styled.h2`
   }
 `;
 
-export const Description = styled.p`
-  margin: 0 0 1rem;
-  line-height: 1.6rem;
-  display: inline-block;
-  font-size: 0.8rem;
-`;
-
 export const Image = styled.img`
   width: 100%;
   display: inline-block;

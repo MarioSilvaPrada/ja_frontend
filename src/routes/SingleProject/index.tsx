@@ -7,6 +7,8 @@ import LazyImage from 'components/LazyImage';
 import getTextParagraphs from 'utils/textParagraph';
 import translation from '../../../translations/en_pt';
 
+import DescriptionText from 'components/DescriptionText';
+
 import * as S from './style';
 
 interface IProps {
@@ -138,10 +140,12 @@ const Projetos: FC<IProps> = ({ getNameTags, isEN }) => {
             <S.Column>
               {singleProject?.section.map((section) => (
                 <div key={section.id}>
-                  {getTextParagraphs(
+                  <DescriptionText>{section.description_en}</DescriptionText>
+                  <DescriptionText isPT>{section.description}</DescriptionText>
+                  {/* {getTextParagraphs(
                     isEN ? section.description_en : section.description,
                     S.Description
-                  )}
+                  )} */}
                   {section.image
                     .sort((a, b) => {
                       if (a.image_name < b.image_name) {

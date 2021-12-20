@@ -14,6 +14,7 @@ export interface ISettings {
   description: string;
   description_en: string;
   about_me_image: string;
+  company_file?: string;
 }
 
 export interface IProjects {

@@ -34,14 +34,14 @@ const NavBar: FC<IProps> = ({ isEN, setIsEN }) => (
         {translation[isEN ? 'EN' : 'PT'].HEADER.STUDIO}
       </S.Option>
     </S.OptionsWrapper>
-    <S.TranslationWrapper>
+    {/* <S.TranslationWrapper>
       <S.LangPress isSelected={isEN} onClick={() => setIsEN(true)}>
         EN
       </S.LangPress>
       <S.LangPress isSelected={!isEN} onClick={() => setIsEN(false)}>
         PT
       </S.LangPress>
-    </S.TranslationWrapper>
+    </S.TranslationWrapper> */}
   </S.NavContainer>
 );
 
