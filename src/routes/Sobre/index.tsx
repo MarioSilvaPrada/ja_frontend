@@ -3,6 +3,8 @@ import Layout from 'components/Layout';
 import { ISettings } from 'utils/interfaces';
 import { getPartners, getSettings } from 'api';
 import DescriptionText from 'components/DescriptionText';
+import { Wrapper } from 'components/DescriptionText/style';
+
 // import getTextParagraphs from 'utils/textParagraph';
 
 import * as S from './style';
@@ -44,8 +46,12 @@ const Sobre: FC<IProps> = ({ settings }) => {
           <S.AboutImg src={userSettings?.about_me_image} />
           {userSettings?.description && userSettings?.description_en && (
             <S.AboutWrapper>
-              <DescriptionText>{userSettings.description_en}</DescriptionText>
-              <DescriptionText isPT>{userSettings.description}</DescriptionText>
+              <Wrapper>
+                <DescriptionText>{userSettings.description_en}</DescriptionText>
+                <DescriptionText isPT>
+                  {userSettings.description}
+                </DescriptionText>
+              </Wrapper>
               {/* {getTextParagraphs(
                 isEN ? userSettings.description_en : userSettings.description,
                 S.AboutParagraph

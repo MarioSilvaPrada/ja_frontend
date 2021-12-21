@@ -3,6 +3,7 @@ import Layout from 'components/Layout';
 import { useParams, useLocation, useHistory } from 'react-router-dom';
 import { getSingleProject } from 'api';
 import { IProjects } from 'utils/interfaces';
+import { Wrapper } from 'components/DescriptionText/style';
 import LazyImage from 'components/LazyImage';
 import getTextParagraphs from 'utils/textParagraph';
 import translation from '../../../translations/en_pt';
@@ -140,8 +141,12 @@ const Projetos: FC<IProps> = ({ getNameTags, isEN }) => {
             <S.Column>
               {singleProject?.section.map((section) => (
                 <div key={section.id}>
-                  <DescriptionText>{section.description_en}</DescriptionText>
-                  <DescriptionText isPT>{section.description}</DescriptionText>
+                  <Wrapper>
+                    <DescriptionText>{section.description_en}</DescriptionText>
+                    <DescriptionText isPT>
+                      {section.description}
+                    </DescriptionText>
+                  </Wrapper>
                   {/* {getTextParagraphs(
                     isEN ? section.description_en : section.description,
                     S.Description
