@@ -38,8 +38,8 @@ export const Option = styled(NavLink)`
 `;
 
 export const StyledImage = styled.img`
-  width: 8rem;
-  margin-bottom: 3rem;
+  width: 12rem;
+  margin-bottom: 2.5rem;
 `;
 
 export const TranslationWrapper = styled.div`

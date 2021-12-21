@@ -2,7 +2,7 @@ import React, { FC } from 'react';
 
 import translation from '../../../translations/en_pt.js';
 
-import logo from '../../assets/logo.svg';
+import logo from '../../assets/logo.png';
 import * as S from './style';
 
 interface IProps {
