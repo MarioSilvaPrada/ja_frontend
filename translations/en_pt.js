@@ -16,7 +16,7 @@ const translation = {
       TYPOLOGY: 'Typology',
       YEAR: 'Year',
       CONSTRUCTION: 'Construction',
-      STATE: 'State',
+      STATE: 'Status',
       PROGRAM: 'Program',
       LOCATION: 'Location',
       CLIENT: 'Client',

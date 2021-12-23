@@ -54,20 +54,8 @@ const Projetos: FC<IProps> = ({ getNameTags, isEN }) => {
 
   const projectInfo = [
     {
-      name: translation[isEN ? 'EN' : 'PT'].SINGLE_PROJECT.ARCHITECTURE,
-      value: singleProject?.architects,
-    },
-    {
-      name: translation[isEN ? 'EN' : 'PT'].SINGLE_PROJECT.ENGINEERING,
-      value: singleProject?.engineering,
-    },
-    {
-      name: translation[isEN ? 'EN' : 'PT'].SINGLE_PROJECT.PHOTOGRAPHY,
-      value: singleProject?.photographs,
-    },
-    {
-      name: translation[isEN ? 'EN' : 'PT'].SINGLE_PROJECT.IMAGES,
-      value: singleProject?.images,
+      name: translation[isEN ? 'EN' : 'PT'].SINGLE_PROJECT.PROGRAM,
+      value: singleProject?.program,
     },
     {
       name: translation[isEN ? 'EN' : 'PT'].SINGLE_PROJECT.AREA,
@@ -78,28 +66,40 @@ const Projetos: FC<IProps> = ({ getNameTags, isEN }) => {
       value: singleProject?.tipology,
     },
     {
-      name: translation[isEN ? 'EN' : 'PT'].SINGLE_PROJECT.YEAR,
-      value: singleProject?.year,
+      name: translation[isEN ? 'EN' : 'PT'].SINGLE_PROJECT.LOCATION,
+      value: singleProject?.location,
     },
     {
-      name: translation[isEN ? 'EN' : 'PT'].SINGLE_PROJECT.CONSTRUCTION,
-      value: singleProject?.construction,
+      name: translation[isEN ? 'EN' : 'PT'].SINGLE_PROJECT.YEAR,
+      value: singleProject?.year,
     },
     {
       name: translation[isEN ? 'EN' : 'PT'].SINGLE_PROJECT.STATE,
       value: singleProject?.state,
     },
     {
-      name: translation[isEN ? 'EN' : 'PT'].SINGLE_PROJECT.PROGRAM,
-      value: singleProject?.program,
-    },
-    {
-      name: translation[isEN ? 'EN' : 'PT'].SINGLE_PROJECT.LOCATION,
-      value: singleProject?.location,
-    },
-    {
       name: translation[isEN ? 'EN' : 'PT'].SINGLE_PROJECT.CLIENT,
       value: singleProject?.client,
+    },
+    {
+      name: translation[isEN ? 'EN' : 'PT'].SINGLE_PROJECT.IMAGES,
+      value: singleProject?.images,
+    },
+    {
+      name: translation[isEN ? 'EN' : 'PT'].SINGLE_PROJECT.PHOTOGRAPHY,
+      value: singleProject?.photographs,
+    },
+    {
+      name: translation[isEN ? 'EN' : 'PT'].SINGLE_PROJECT.ARCHITECTURE,
+      value: singleProject?.architects,
+    },
+    {
+      name: translation[isEN ? 'EN' : 'PT'].SINGLE_PROJECT.ENGINEERING,
+      value: singleProject?.engineering,
+    },
+    {
+      name: translation[isEN ? 'EN' : 'PT'].SINGLE_PROJECT.CONSTRUCTION,
+      value: singleProject?.construction,
     },
   ];
 
