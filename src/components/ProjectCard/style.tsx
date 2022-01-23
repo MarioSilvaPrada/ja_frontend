@@ -1,8 +1,12 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { Link } from 'react-router-dom';
 
 interface IProps {
   imgURL?: string;
+}
+
+interface ILink {
+  isDisabled: boolean;
 }
 
 export const ImageCard = styled.div<IProps>`
@@ -54,6 +58,12 @@ export const Layer = styled.div`
   }
 `;
 
-export const PressWrapper = styled(Link)``;
+export const PressWrapper = styled(Link)<ILink>`
+  ${({ isDisabled }) =>
+    isDisabled &&
+    css`
+      pointer-events: none;
+    `}
+`;
 
 export const H3 = styled.h3``;

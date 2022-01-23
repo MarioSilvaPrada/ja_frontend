@@ -37,6 +37,7 @@ export interface IProjects {
   client: string;
   location: string;
   year: string;
+  is_active: boolean;
   section: Array<{
     id: number;
     project: number;
