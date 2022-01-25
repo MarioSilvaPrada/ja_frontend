@@ -80,17 +80,19 @@ const Slider: FC<IProps> = ({ sliderProjects, isEN }) => {
         <S.Button left onClick={() => goToItem('left')} />
         <S.Button onClick={() => goToItem('right')} />
         <S.CarouselWrapper itemIndex={item}>
-          {sliderProjects.map(({ main_image, name, name_en, id }, i) => (
-            <S.StyledLink to={`works/${id}`} key={id}>
-              <S.Card>
-                <S.Layer />
-                <S.TextWrapper>
-                  {animateText(isEN ? name_en : name, item === i)}
-                </S.TextWrapper>
-                <S.Image urlImage={main_image} />
-              </S.Card>
-            </S.StyledLink>
-          ))}
+          {sliderProjects.map(
+            ({ main_image, name, name_en, id, is_active }, i) => (
+              <S.StyledLink to={`works/${id}`} key={id} isDisabled={!is_active}>
+                <S.Card>
+                  <S.Layer />
+                  <S.TextWrapper>
+                    {animateText(isEN ? name_en : name, item === i)}
+                  </S.TextWrapper>
+                  <S.Image urlImage={main_image} />
+                </S.Card>
+              </S.StyledLink>
+            )
+          )}
         </S.CarouselWrapper>
       </S.Container>
     </>
