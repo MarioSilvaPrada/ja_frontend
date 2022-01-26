@@ -130,7 +130,8 @@ const Projetos: FC<IProps> = ({ getNameTags, isEN }) => {
   };
 
   return (
-    singleProject && (
+    singleProject &&
+    singleProject?.is_active && (
       <Layout>
         <S.Container>
           <S.Title>

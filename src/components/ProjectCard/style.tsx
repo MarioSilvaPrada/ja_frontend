@@ -62,7 +62,6 @@ export const PressWrapper = styled(Link)<ILink>`
   ${({ isDisabled }) =>
     isDisabled &&
     css`
-      pointer-events: none;
     `}
 `;
 

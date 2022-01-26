@@ -9,13 +9,18 @@ interface IProps {
 }
 
 const ProjectCard: FC<IProps> = ({ project, isEN }) => {
+  const isActive = project?.is_active;
   return (
     <S.PressWrapper
-      to={{
-        pathname: `/works/${project.id}`,
-        state: { project },
-      }}
-      isDisabled={!project?.is_active}
+      to={
+        isActive
+          ? {
+              pathname: `/works/${project.id}`,
+              state: { project },
+            }
+          : null
+      }
+      isDisabled={!isActive}
     >
       <LazyImage
         alt="project image"
