@@ -33,10 +33,10 @@ const Projetos: FC<IProps> = ({ projects, isEN }) => {
       <S.Container>
         {allProjects
           .sort((a, b) => {
-            if (a.position < b.position) {
+            if (a.position > b.position) {
               return -1;
             }
-            if (a.position > b.position) {
+            if (a.position < b.position) {
               return 1;
             }
             return 0;
