@@ -38,7 +38,7 @@ export const Option = styled(NavLink)`
 `;
 
 export const StyledImage = styled.img`
-  width: 12rem;
+  width: 5rem;
   margin-bottom: 2.5rem;
 `;
 
