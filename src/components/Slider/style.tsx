@@ -48,10 +48,6 @@ interface IAnimatedText {
   isSpace?: boolean;
 }
 
-interface ILink {
-  isDisabled: boolean;
-}
-
 const SLIDER_HEIGHT = '40rem';
 const SLIDER_MARGIN = '3rem';
 
@@ -122,13 +118,7 @@ export const Layer = styled.div`
   background: rgba(255, 255, 255, 0.25);
 `;
 
-export const StyledLink = styled(Link)<ILink>`
-  ${({ isDisabled }) =>
-    isDisabled &&
-    css`
-      pointer-events: none;
-    `}
-`;
+export const StyledLink = styled(Link)``;
 
 export const Card = styled.div`
   position: relative;

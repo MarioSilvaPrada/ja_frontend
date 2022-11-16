@@ -82,7 +82,7 @@ const Slider: FC<IProps> = ({ sliderProjects, isEN }) => {
         <S.CarouselWrapper itemIndex={item}>
           {sliderProjects.map(
             ({ main_image, name, name_en, id, is_active }, i) => (
-              <S.StyledLink to={`works/${id}`} key={id} isDisabled={!is_active}>
+              <S.StyledLink to={!is_active ? '#' : `works/${id}`} key={id}>
                 <S.Card>
                   <S.Layer />
                   <S.TextWrapper>

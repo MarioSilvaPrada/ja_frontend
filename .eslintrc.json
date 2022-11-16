@@ -29,6 +29,7 @@
         "tsx": "never"
       }
     ],
+    "camelcase": "off",
     "react/jsx-wrap-multilines": "off",
     "react/prop-types": "off",
     "no-console": 1,
