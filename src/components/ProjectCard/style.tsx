@@ -5,10 +5,6 @@ interface IProps {
   imgURL?: string;
 }
 
-interface ILink {
-  isDisabled: boolean;
-}
-
 export const ImageCard = styled.div<IProps>`
   background-image: url(${({ imgURL }) => imgURL || ''});
   background-position: center;
@@ -58,11 +54,6 @@ export const Layer = styled.div`
   }
 `;
 
-export const PressWrapper = styled(Link)<ILink>`
-  ${({ isDisabled }) =>
-    isDisabled &&
-    css`
-    `}
-`;
+export const PressWrapper = styled(Link)``;
 
 export const H3 = styled.h3``;

@@ -18,9 +18,8 @@ const ProjectCard: FC<IProps> = ({ project, isEN }) => {
               pathname: `/works/${project.id}`,
               state: { project },
             }
-          : null
+          : '#'
       }
-      isDisabled={!isActive}
     >
       <LazyImage
         alt="project image"
