@@ -5,9 +5,10 @@ import { getPartners, getSettings } from 'api';
 import DescriptionText from 'components/DescriptionText';
 import { Wrapper } from 'components/DescriptionText/style';
 
-// import getTextParagraphs from 'utils/textParagraph';
+import getTextParagraphs from 'utils/textParagraph';
 
 import * as S from './style';
+import { Spacer } from 'components/Spacer';
 
 interface IProps {
   settings: ISettings;
@@ -47,15 +48,15 @@ const Sobre: FC<IProps> = ({ settings }) => {
           {userSettings?.description && userSettings?.description_en && (
             <S.AboutWrapper>
               <Wrapper>
-                <DescriptionText>{userSettings.description_en}</DescriptionText>
-                <DescriptionText isPT>
-                  {userSettings.description}
-                </DescriptionText>
+                {getTextParagraphs(
+                  userSettings.description_en,
+                  DescriptionText
+                )}
+                <Spacer />
+                {getTextParagraphs(userSettings.description, DescriptionText, {
+                  isPT: true,
+                })}
               </Wrapper>
-              {/* {getTextParagraphs(
-                isEN ? userSettings.description_en : userSettings.description,
-                S.AboutParagraph
-              )} */}
             </S.AboutWrapper>
           )}
           {partners.length > 0 && (

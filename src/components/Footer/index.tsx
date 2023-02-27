@@ -35,8 +35,8 @@ const Footer: FC<IFooter> = ({ settings, isEN }) => {
           </S.ParagraphWrapper>
         )}
         <S.SocialWrapper isHomePage={isHomePage}>
-          {social.map(({ Icon, url }) => (
-            <S.SocialLink href={url} key={url} target="blank">
+          {social.map(({ Icon, name }) => (
+            <S.SocialLink href={settings[name]} key={name} target="blank">
               {Icon()}
             </S.SocialLink>
           ))}

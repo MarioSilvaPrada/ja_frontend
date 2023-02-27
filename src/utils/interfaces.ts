@@ -15,6 +15,9 @@ export interface ISettings {
   description_en: string;
   about_me_image: string;
   company_file?: string;
+  instagram: string;
+  facebook: string;
+  linkedin: string;
 }
 
 export interface IProjects {

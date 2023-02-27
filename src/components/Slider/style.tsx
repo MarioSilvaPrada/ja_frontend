@@ -124,7 +124,6 @@ export const Card = styled.div`
   position: relative;
   margin-left: ${SLIDER_MARGIN};
   width: ${({ theme }) => theme.sizes.sliderWidth};
-  padding-right: ${SLIDER_MARGIN};
 
   @media (max-width: 500px) {
     margin-left: 0;
