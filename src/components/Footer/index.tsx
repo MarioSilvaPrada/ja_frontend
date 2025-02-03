@@ -24,7 +24,7 @@ const Footer: FC<IFooter> = ({ settings, isEN }) => {
           <S.ParagraphWrapper>
             <S.Title>{translation[isEN ? 'EN' : 'PT'].FOOTER.CONTACTS}</S.Title>
             <S.ContactWrapper>
-              <S.Paragraph>joaodqafonso@gmail.com</S.Paragraph>
+              <S.Paragraph>info@ja-architecture.com</S.Paragraph>
               <S.DotWrapper>•</S.DotWrapper>
               <S.Paragraph>
                 (+351)
