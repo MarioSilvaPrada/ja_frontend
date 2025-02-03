@@ -105,7 +105,7 @@ const Wrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 65vh;
+  height: 60vh;
   padding: 1rem;
 `;
 
