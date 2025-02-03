@@ -11,57 +11,62 @@ import PageNotFound from './routes/PageNotFound';
 import Footer from 'components/Footer';
 import Spinner from 'components/Spinner';
 import NavBar from 'components/NavBar';
+import styled from 'styled-components';
 
 const Navigation = () => {
   const [settings, setSettings] = useState([]);
   const [projects, setProjects] = useState([]);
   const [allTags, setAllTags] = useState([]);
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(false);
   const [isEN, setIsEN] = useState(true);
 
-  const getData = async () => {
-    const mySettings = await getSettings();
+  // const getData = async () => {
+  //   const mySettings = await getSettings();
 
-    if (mySettings) {
-      setSettings(mySettings);
-    }
+  //   if (mySettings) {
+  //     setSettings(mySettings);
+  //   }
 
-    const myProjects = await getProjects();
+  //   const myProjects = await getProjects();
 
-    if (myProjects) {
-      setProjects(myProjects);
-    }
+  //   if (myProjects) {
+  //     setProjects(myProjects);
+  //   }
 
-    const tags = await getTags();
+  //   const tags = await getTags();
 
-    if (tags) {
-      setAllTags(tags);
-    }
+  //   if (tags) {
+  //     setAllTags(tags);
+  //   }
 
-    setIsLoading(false);
-  };
+  //   setIsLoading(false);
+  // };
 
-  const getNameTags = (tagId) => {
-    if (allTags) {
-      for (let tag of allTags) {
-        if (tag.id == tagId) {
-          if (isEN) {
-            return tag.name_en;
-          }
-          return tag.name;
-        }
-      }
-    }
-  };
+  // const getNameTags = (tagId) => {
+  //   if (allTags) {
+  //     for (let tag of allTags) {
+  //       if (tag.id == tagId) {
+  //         if (isEN) {
+  //           return tag.name_en;
+  //         }
+  //         return tag.name;
+  //       }
+  //     }
+  //   }
+  // };
 
-  useEffect(() => {
-    getData();
-  }, []);
+  // useEffect(() => {
+  //   getData();
+  // }, []);
   return !isLoading ? (
     <Router>
       <NavBar setIsEN={setIsEN} isEN={isEN} />
 
-      <Switch>
+      <Wrapper>
+        <StyledText>Site under construction</StyledText>
+      </Wrapper>
+
+      {/* <Switch>
         <Route
           exact
           path="/"
@@ -86,7 +91,7 @@ const Navigation = () => {
           component={() => <Sobre settings={settings} isEN={isEN} />}
         />
         <Route path="*" component={PageNotFound} />
-      </Switch>
+      </Switch> */}
       <Footer settings={settings} isEN={isEN} />
     </Router>
   ) : (
@@ -95,3 +100,16 @@ const Navigation = () => {
 };
 
 export default Navigation;
+
+const Wrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 65vh;
+  padding: 1rem;
+`;
+
+const StyledText = styled.p`
+  font-size: 1.5rem;
+  text-align: center;
+`;

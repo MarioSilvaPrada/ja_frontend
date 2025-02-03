@@ -16,7 +16,7 @@ const NavBar: FC<IProps> = ({ isEN, setIsEN }) => (
       <S.StyledImage src={logo} alt="logo" />
     </S.Home>
     <S.OptionsWrapper>
-      <S.Option
+      {/* <S.Option
         to="/works"
         activeStyle={{
           fontWeight: 'normal',
@@ -32,7 +32,7 @@ const NavBar: FC<IProps> = ({ isEN, setIsEN }) => (
         }}
       >
         {translation[isEN ? 'EN' : 'PT'].HEADER.STUDIO}
-      </S.Option>
+      </S.Option> */}
     </S.OptionsWrapper>
   </S.NavContainer>
 );
