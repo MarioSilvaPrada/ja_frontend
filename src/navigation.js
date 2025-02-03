@@ -1,13 +1,13 @@
-import React, { useState, useEffect } from 'react';
-import { getProjects, getSettings, getTags } from 'api';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import App from './routes/App';
+import React, { useState } from 'react';
+// import { getProjects, getSettings, getTags } from 'api';
+import { BrowserRouter as Router } from 'react-router-dom';
+// import App from './routes/App';
 
 // Pages
-import Projetos from './routes/Projetos';
-import ProductPage from './routes/SingleProject';
-import Sobre from './routes/Sobre';
-import PageNotFound from './routes/PageNotFound';
+// import Projetos from './routes/Projetos';
+// import ProductPage from './routes/SingleProject';
+// import Sobre from './routes/Sobre';
+// import PageNotFound from './routes/PageNotFound';
 import Footer from 'components/Footer';
 import Spinner from 'components/Spinner';
 import NavBar from 'components/NavBar';
@@ -16,8 +16,8 @@ import styled from 'styled-components';
 const Navigation = () => {
   const [settings, setSettings] = useState([]);
   const [projects, setProjects] = useState([]);
-  const [allTags, setAllTags] = useState([]);
-  const [isLoading, setIsLoading] = useState(false);
+  // const [allTags, setAllTags] = useState([]);
+  // const [isLoading, setIsLoading] = useState(false);
   const [isEN, setIsEN] = useState(true);
 
   // const getData = async () => {
@@ -58,7 +58,7 @@ const Navigation = () => {
   // useEffect(() => {
   //   getData();
   // }, []);
-  return !isLoading ? (
+  return true ? (
     <Router>
       <NavBar setIsEN={setIsEN} isEN={isEN} />
 

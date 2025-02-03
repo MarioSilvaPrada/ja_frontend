@@ -24,11 +24,11 @@ const Footer: FC<IFooter> = ({ settings, isEN }) => {
           <S.ParagraphWrapper>
             <S.Title>{translation[isEN ? 'EN' : 'PT'].FOOTER.CONTACTS}</S.Title>
             <S.ContactWrapper>
-              <S.Paragraph>{settings?.admin_email}</S.Paragraph>
+              <S.Paragraph>joaodqafonso@gmail.com</S.Paragraph>
               <S.DotWrapper>•</S.DotWrapper>
               <S.Paragraph>
                 (+351)
-                {settings?.admin_phone_number}
+                915 024 276
               </S.Paragraph>
             </S.ContactWrapper>
             <S.Paragraph>{settings?.admin_address}</S.Paragraph>
